@@ -1,0 +1,10 @@
+.Navbar {
+  &__nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    flex: 1;
+  }
+}
