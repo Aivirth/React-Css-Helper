@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 350px;
+  flex: 0 0 350px;
 
   &__logo {
     background-color: $blue-charcoal;

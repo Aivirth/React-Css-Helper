@@ -1,5 +1,6 @@
 .Topnav {
   background: $blue-charcoal;
+  width: calc(100vw - 350px);
   &__nav {
     display: flex;
   }

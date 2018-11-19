@@ -12,12 +12,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Switch>
+          {/* <Switch>
             <Route exact path="/" component={Navbar} />
-          </Switch>
-
-          <Topnav />
-          <Sidenav />
+          </Switch> */}
+          <div className="container d-flex">
+            <Sidenav />
+            <Topnav />
+          </div>
         </div>
       </Router>
     );

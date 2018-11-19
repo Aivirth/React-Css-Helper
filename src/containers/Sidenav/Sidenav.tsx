@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidenav() {
   return (
-    <div className="Sidenav" style={{ width: "350px" }}>
+    <div className="Sidenav">
       <div className="Sidenav__logo">LOGO</div>
 
       <ul className="Sidenav__nav">
