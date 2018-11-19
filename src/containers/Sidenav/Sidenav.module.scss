@@ -2,20 +2,38 @@
 
 .Sidenav {
   background-color: $bright-gray;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 350px;
 
   &__logo {
     background-color: $blue-charcoal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
   }
 
   &__nav {
-    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  &__item {
+  &__link {
     color: $light-slate-grey;
+    display: block;
+    padding: 15px 10px;
+    position: relative;
+    cursor: pointer;
 
     &:hover {
       color: $pattens-blue;
+      background: rgba(0, 0, 0, 0.25);
     }
+  }
+
+  &__item {
   }
 }
