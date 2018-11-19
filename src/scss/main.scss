@@ -3,6 +3,10 @@
 @import "./abstracts/mixins";
 @import "./abstracts/colors";
 
+// Base
+@import "./base/reset";
+@import "./base/typography";
+
 // Layout
 // Components
 @import "./components/Navbar";
