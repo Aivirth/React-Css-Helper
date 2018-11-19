@@ -1,0 +1,11 @@
+@import "../../scss//colors";
+
+.Topnav {
+  background: $blue-charcoal;
+  &__nav {
+    display: flex;
+  }
+  &__title {
+    color: $azure;
+  }
+}
