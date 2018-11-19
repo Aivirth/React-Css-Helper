@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { string } from "prop-types";
+import classes from "./NavItem.module.scss";
 
 export default function NavItem(props: any) {
-  interface CssClasses {
-    navItemCssClasses: string;
-  }
-
-  const { navItemCssClasses }: CssClasses = props;
-
-  return <li className={navItemCssClasses}>{props.children}</li>;
+  return <li className={classes.NavItem}>{props.children}</li>;
 }
