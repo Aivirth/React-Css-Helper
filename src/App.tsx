@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 import Topnav from "./containers/Topnav/Topnav";
+import Sidenav from "./containers/Sidenav/Sidenav";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           </Switch>
 
           <Topnav />
+          <Sidenav />
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>

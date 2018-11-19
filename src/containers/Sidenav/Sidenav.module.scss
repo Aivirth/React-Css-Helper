@@ -1,0 +1,21 @@
+@import "../../scss/colors";
+
+.Sidenav {
+  background-color: $bright-gray;
+
+  &__logo {
+    background-color: $blue-charcoal;
+  }
+
+  &__nav {
+    flex-direction: column;
+  }
+
+  &__item {
+    color: $light-slate-grey;
+
+    &:hover {
+      color: $pattens-blue;
+    }
+  }
+}
