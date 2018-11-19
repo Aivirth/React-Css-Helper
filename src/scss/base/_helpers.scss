@@ -1,0 +1,94 @@
+$display-utils: (
+  d-none: "none",
+  d-inline: "inline",
+  d-inline-block: "inline-block",
+  d-block: "block",
+  d-table: "table",
+  d-table-cell: "table-cell",
+  d-table-row: "table-row",
+  d-flex: "flex",
+  d-inline-flex: "inline-flex"
+);
+
+$flex-utils: (
+  flex-row: "row",
+  flex-row-reverse: "row-reverse",
+  flex-column: "column",
+  flex-column-reverse: "column-reverse"
+);
+
+$flex-justify: (
+  justify-content-start: "flex-start",
+  justify-content-end: "flex-end",
+  justify-content-center: "center",
+  justify-content-between: "space-between",
+  justify-content-around: "space-around"
+);
+
+@each $util, $value in $display-utils {
+  .#{$util} {
+    display: #{$value} !important;
+  }
+}
+
+@each $util, $value in $flex-utils {
+  .#{$util} {
+    flex-direction: #{$value} !important;
+  }
+}
+
+@each $util, $value in $flex-justify {
+  .#{$util} {
+    justify-content: #{$value} !important;
+  }
+}
+
+@for $i from 1 through 10 {
+  .p-#{$i} {
+    padding: (#{$i} * 1rem) !important;
+  }
+  .py-#{$i} {
+    padding-top: (#{$i} * 1rem) !important;
+    padding-bottom: (#{$i} * 1rem) !important;
+  }
+  .px-#{$i} {
+    padding-left: (#{$i} * 1rem) !important;
+    padding-right: (#{$i} * 1rem) !important;
+  }
+  .pt-#{$i} {
+    padding-top: (#{$i} * 1rem) !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: (#{$i} * 1rem) !important;
+  }
+  .pl-#{$i} {
+    padding-left: (#{$i} * 1rem) !important;
+  }
+  .pr-#{$i} {
+    padding-right: (#{$i} * 1rem) !important;
+  }
+
+  .m-#{$i} {
+    margin: (#{$i} * 1rem) !important;
+  }
+  .my-#{$i} {
+    margin-top: (#{$i} * 1rem) !important;
+    margin-bottom: (#{$i} * 1rem) !important;
+  }
+  .mx-#{$i} {
+    margin-left: (#{$i} * 1rem) !important;
+    margin-right: (#{$i} * 1rem) !important;
+  }
+  .mt-#{$i} {
+    margin-top: (#{$i} * 1rem) !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: (#{$i} * 1rem) !important;
+  }
+  .ml-#{$i} {
+    margin-left: (#{$i} * 1rem) !important;
+  }
+  .mr-#{$i} {
+    margin-right: (#{$i} * 1rem) !important;
+  }
+}
