@@ -10,10 +10,37 @@
 
   &__logo {
     background-color: $blue-charcoal;
+
+    width: $logo-wrapper-width;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__item {
+    color: $azure;
+    display: flex;
+    height: 100%;
+  }
+
+  &__link {
+    cursor: pointer;
+    padding: 2rem;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__title,
+  &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    width: $logo-wrapper-width;
   }
 }

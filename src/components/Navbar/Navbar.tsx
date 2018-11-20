@@ -1,6 +1,10 @@
 import React from "react";
-import classes from "./Navbar.module.scss";
-
 export default function Navbar(props: any) {
-  return <ul className="Navbar__list">{props.children}</ul>;
+  let { cssClasses }: { cssClasses: string | undefined } = props;
+
+  if (!cssClasses) {
+    cssClasses = "";
+  }
+
+  return <ul className={`Navbar__list ${cssClasses}`}>{props.children}</ul>;
 }

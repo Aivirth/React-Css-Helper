@@ -8,11 +8,19 @@ export default function Topnav() {
       <div className="Topnav__nav">
         <div className="Topnav__logo">LOGO</div>
         <div className="Topnav__title">React CSS Helper</div>
-        <Navbar>
-          <NavItem>Lorem</NavItem>
-          <NavItem>Lorem</NavItem>
-          <NavItem>Lorem</NavItem>
-          <NavItem>Lorem</NavItem>
+        <Navbar cssClasses="Topnav__list">
+          <NavItem cssClasses="Topnav__item">
+            <a className="Topnav__link">Lorem</a>
+          </NavItem>
+          <NavItem cssClasses="Topnav__item">
+            <a className="Topnav__link">Lorem</a>
+          </NavItem>
+          <NavItem cssClasses="Topnav__item">
+            <a className="Topnav__link">Lorem</a>
+          </NavItem>
+          <NavItem cssClasses="Topnav__item">
+            <a className="Topnav__link">Lorem</a>
+          </NavItem>
         </Navbar>
       </div>
     </div>
