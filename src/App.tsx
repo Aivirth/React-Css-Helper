@@ -16,8 +16,8 @@ class App extends Component {
             <Route exact path="/" component={Navbar} />
           </Switch> */}
           <div className="container d-flex">
-            <Sidenav />
             <Topnav />
+            <Sidenav />
           </div>
         </div>
       </Router>

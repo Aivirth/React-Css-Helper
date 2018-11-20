@@ -1,10 +1,19 @@
 .Topnav {
   background: $blue-charcoal;
-  width: calc(100vw - 350px);
+  flex: 0 0 100%;
   &__nav {
     display: flex;
   }
   &__title {
     color: $azure;
+  }
+
+  &__logo {
+    background-color: $blue-charcoal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: $logo-wrapper-width;
   }
 }

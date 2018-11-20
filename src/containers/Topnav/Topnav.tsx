@@ -6,6 +6,7 @@ export default function Topnav() {
   return (
     <div className="Topnav">
       <div className="Topnav__nav">
+        <div className="Topnav__logo">LOGO</div>
         <div className="Topnav__title">React CSS Helper</div>
         <Navbar>
           <NavItem>Lorem</NavItem>

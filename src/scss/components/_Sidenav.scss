@@ -3,15 +3,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  flex: 0 0 350px;
-
-  &__logo {
-    background-color: $blue-charcoal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
+  flex: 0 0 $sidenav-width;
 
   &__nav {
     list-style: none;
