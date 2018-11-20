@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 import Topnav from "./containers/Topnav/Topnav";
 import Sidenav from "./containers/Sidenav/Sidenav";
+import Main from "./containers/Layout/Main/Main";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <div className="container d-flex">
             <Topnav />
             <Sidenav />
+            <Main />
           </div>
         </div>
       </Router>

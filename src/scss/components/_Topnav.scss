@@ -11,7 +11,7 @@
   &__logo {
     background-color: $blue-charcoal;
 
-    width: $logo-wrapper-width;
+    flex: 0 0 $logo-wrapper-width;
   }
 
   &__list {
