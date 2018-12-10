@@ -6,18 +6,19 @@ export default function Checkbox(props) {
   return (
     <React.Fragment>
       <input
-        className="inp-cbx"
+        className="Checkbox__input"
         id={id}
         type="checkbox"
+        name={id}
         style={{ display: "none" }}
       />
-      <label className="cbx" htmlFor={id}>
-        <span>
+      <label className="Checkbox" htmlFor={id}>
+        <span className="Checkbox__svgWrapper">
           <svg width="12px" height="10px" viewBox="0 0 12 10">
             <polyline points="1.5 6 4.5 9 10.5 1" />
           </svg>
         </span>
-        <span>{label}</span>
+        <span className="Checkbox__labelName">{label}</span>
       </label>
     </React.Fragment>
   );

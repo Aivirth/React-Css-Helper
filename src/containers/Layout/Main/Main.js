@@ -6,8 +6,6 @@ export default function Main(props) {
   return (
     <div className="Main d-flex container">
       <div className="Main__column">
-        {/* Temp Inputs */}
-        <div style={{ marginBottom: "30px" }} />
         <Inputs />
       </div>
       <div className="Main__column">
