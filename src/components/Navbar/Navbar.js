@@ -1,6 +1,6 @@
 import React from "react";
-export default function Navbar(props: any) {
-  let { cssClasses }: { cssClasses: string | undefined } = props;
+export default function Navbar(props) {
+  let { cssClasses } = props;
 
   if (!cssClasses) {
     cssClasses = "";

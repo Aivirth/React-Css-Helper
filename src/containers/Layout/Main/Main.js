@@ -1,7 +1,7 @@
 import React from "react";
 import Stage from "../../../components/Stage/Stage";
 
-export default function Main(props: any) {
+export default function Main(props) {
   return (
     <div className="Main d-flex container">
       <div className="Main__column">

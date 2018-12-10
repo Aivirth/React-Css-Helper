@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function NavItem(props: any) {
-  let { cssClasses }: { cssClasses: string | undefined } = props;
+export default function NavItem(props) {
+  let { cssClasses } = props;
 
   if (!cssClasses) {
     cssClasses = "";
