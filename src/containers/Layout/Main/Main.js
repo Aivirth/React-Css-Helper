@@ -1,5 +1,6 @@
 import React from "react";
 import Stage from "../../../components/Stage/Stage";
+import Range from "../../../components/UI/Range/Range";
 
 export default function Main(props) {
   return (
@@ -24,6 +25,8 @@ export default function Main(props) {
         </label>
 
         <hr />
+
+        <Range id="rangeTest" label="Range Proto" min="-10" max="10" step="1" />
       </div>
       <div className="Main__column">
         <Stage />
