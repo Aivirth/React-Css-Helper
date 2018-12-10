@@ -8,22 +8,24 @@ export default function Sidenav() {
     <div className="Sidenav">
       <ul className="Sidenav__nav">
         <li className="Sidenav__item">
-          <a className="Sidenav__link">Lorem</a>
+          <Link to="/base" className="Sidenav__link">
+            Base
+          </Link>
         </li>
         <li className="Sidenav__item">
-          <a className="Sidenav__link Sidenav__link--active">Lorem</a>
+          <Link to="/borders" className="Sidenav__link Sidenav__link--active">
+            Borders
+          </Link>
         </li>
         <li className="Sidenav__item">
-          <a className="Sidenav__link">Lorem</a>
+          <Link to="/border-radius" className="Sidenav__link">
+            Border radius
+          </Link>
         </li>
         <li className="Sidenav__item">
-          <a className="Sidenav__link">Lorem</a>
-        </li>
-        <li className="Sidenav__item">
-          <a className="Sidenav__link">Lorem</a>
-        </li>
-        <li className="Sidenav__item">
-          <a className="Sidenav__link">Lorem</a>
+          <Link to="/box-shadow" className="Sidenav__link">
+            Box Shadow
+          </Link>
         </li>
       </ul>
     </div>
