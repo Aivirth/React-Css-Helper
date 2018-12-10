@@ -1,14 +1,17 @@
 import React from "react";
+import Base from "../../components/Options/Base/Base";
+import BorderRadius from "../../components/Options/BorderRadius/BorderRadius";
+import Borders from "../../components/Options/Borders/Borders";
+import BoxShadow from "../../components/Options/BoxShadow/BoxShadow";
+import { Route } from "react-router-dom";
 
-import Range from "../../components/UI/Range/Range";
-import Checkbox from "../../components/UI/Checkbox/Checkbox";
-
-export default function Inputs(props) {
+export default function Inputs() {
   return (
     <div className="Inputs">
-      <Checkbox id="checkTest" label="checkbox Test" />
-
-      <Range id="rangeTest" label="Range Proto" min="-10" max="10" step="1" />
+      <Route path="/base" component={Base} />
+      <Route path="/box-shadow" component={BoxShadow} />
+      <Route path="/borders" component={Borders} />
+      <Route path="/border-radius" component={BorderRadius} />
     </div>
   );
 }
