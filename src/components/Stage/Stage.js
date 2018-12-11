@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Actor from "./Actor/Actor";
 
 class Stage extends Component {
   state = {
@@ -18,13 +19,44 @@ class Stage extends Component {
     this.setState({ isRevealActive: false });
   };
 
+  formatActorStylesFromStore = () => {
+    const { base, borders, boxShadow } = this.props.computedStylesFromState;
+
+    return {
+      width: `${base.width}px`,
+      height: `${base.height}px`,
+      margin: base.margin,
+      backgroundColor: base.backgroundColor,
+
+      borderTop: `${borders.top.width}px ${borders.top.style} ${
+        borders.top.color
+      }`,
+      borderBottom: `${borders.bottom.width}px ${borders.bottom.style} ${
+        borders.bottom.color
+      }`,
+      borderRight: `${borders.right.width}px ${borders.right.style} ${
+        borders.right.color
+      }`,
+      borderLeft: `${borders.left.width}px ${borders.left.style} ${
+        borders.left.color
+      }`,
+
+      //TODO: color needs to be converted into rgba and combined with opacity
+      boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
+        boxShadow.blur
+      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadow.inset}`
+    };
+  };
+
   render() {
     const { isRevealActive } = this.state;
 
     return (
       <div className="Stage">
         <div className="Stage__wrapper">
-          <div className="Stage__actor">Actor</div>
+          <div className="Stage__actor">
+            <Actor styles={this.formatActorStylesFromStore()} />
+          </div>
 
           <div
             className={`Stage__reveal ${
