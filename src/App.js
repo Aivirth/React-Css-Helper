@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 
 import "./App.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 import Topnav from "./containers/Topnav/Topnav";

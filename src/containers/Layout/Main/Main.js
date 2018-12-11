@@ -1,5 +1,5 @@
 import React from "react";
-import Inputs from "../../Inputs/Inputs";
+import Inputs from "../../InputsForm/InputsForm";
 import Stage from "../../../components/Stage/Stage";
 
 export default function Main(props) {
