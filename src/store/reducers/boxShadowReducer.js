@@ -1,3 +1,4 @@
+import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   offsetY: {
     value: 10,
@@ -99,3 +100,36 @@ const initialState = {
     }
   }
 };
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_BOXSHADOW:
+      return { ...state };
+
+    case actionTypes.UPDT_BOXSHADOWOFFSETY:
+      return { ...state, offsetY: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWOFFSETX:
+      return { ...state, offsetX: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWBLUR:
+      return { ...state, blur: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWSPREAD:
+      return { ...state, spread: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWCOLOR:
+      return { ...state, color: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWOPACITY:
+      return { ...state, opacity: action.payload };
+
+    case actionTypes.UPDT_BOXSHADOWINSET:
+      return { ...state, inset: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export default reducer;

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, compose, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import baseReducer from "./store/reducers/baseReducer";
+import boxShadowReducer from "./store/reducers/boxShadowReducer";
 
 import "./scss/main.scss";
 import App from "./App";
@@ -14,7 +15,8 @@ const composeEnhancers =
     : null || compose;
 
 const rootReducer = combineReducers({
-  base: baseReducer
+  base: baseReducer,
+  boxShadow: boxShadowReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers());
