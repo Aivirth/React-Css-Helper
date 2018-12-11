@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "./App.scss";
 import {
   BrowserRouter as Router,
@@ -7,8 +6,8 @@ import {
   Switch,
   withRouter
 } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 
+import Navbar from "./components/Navbar/Navbar";
 import Topnav from "./containers/Topnav/Topnav";
 import Sidenav from "./containers/Sidenav/Sidenav";
 import Main from "./containers/Layout/Main/Main";
