@@ -23,26 +23,25 @@ class Stage extends Component {
     const { base, borders, boxShadow } = this.props.computedStylesFromState;
 
     return `
-      width: ${base.width}px
-      height: ${base.height}px
-      margin: ${base.margin}
-      background-color: ${base.backgroundColor}
-      border-top: ${borders.top.width}px ${borders.top.style} ${
+    width: ${base.width}px; 
+    height: ${base.height}px; 
+    margin: ${base.margin}; 
+    background-color: ${base.backgroundColor}; 
+    border-top: ${borders.top.width}px ${borders.top.style} ${
       borders.top.color
-    }
-      border-bottom: ${borders.bottom.width}px ${borders.bottom.style} ${
+    };
+    border-bottom: ${borders.bottom.width}px ${borders.bottom.style} ${
       borders.bottom.color
-    }
-      border-right: ${borders.right.width}px ${borders.right.style} ${
+    };
+    border-right: ${borders.right.width}px ${borders.right.style} ${
       borders.right.color
-    },
-      border-left: ${borders.left.width}px ${borders.left.style} ${
+    };
+    border-left: ${borders.left.width}px ${borders.left.style} ${
       borders.left.color
-    }      
-      box-shadow: ${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
+    }; 
+    box-shadow: ${boxShadow.offsetY}px ${boxShadow.offsetX}px ${
       boxShadow.blur
-    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadow.inset}
-    `;
+    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadow.inset};`;
   };
 
   formatActorStylesFromStore = () => {
@@ -90,11 +89,9 @@ class Stage extends Component {
             }`}
           >
             <div className="Stage__reveal__content">
-              <textarea
-                name=""
-                id=""
-                value={this.formatSpectatorDataFromStore()}
-              />
+              <textarea name="" id="">
+                {this.formatSpectatorDataFromStore()}
+              </textarea>
               <button>Copy to Clipboard</button>
             </div>
 
