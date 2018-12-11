@@ -1,3 +1,4 @@
+import * as actionTypes from "../actions/actionTypes";
 const initialState = {
   width: {
     value: 200,
@@ -48,3 +49,26 @@ const initialState = {
     }
   }
 };
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_BASE:
+      return { ...state };
+
+    case actionTypes.UPDT_BASEWIDTH:
+      return { ...state, width: action.payload };
+
+    case actionTypes.UPDT_BASEHEIGHT:
+      return { ...state, height: action.payload };
+
+    case actionTypes.UPDT_BASEMARGIN:
+      return { ...state, margin: action.payload };
+
+    case actionTypes.UPDT_BASEBGCOLOR:
+      return { ...state, backgroundColor: action.payload };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
