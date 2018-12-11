@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   base: baseReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeEnhancers());
 
 const app = (
   <Provider store={store}>

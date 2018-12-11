@@ -1,12 +1,12 @@
 import React from "react";
-import Inputs from "../../InputsForm/InputsForm";
+import InputsForm from "../../InputsForm/InputsForm";
 import Stage from "../../../components/Stage/Stage";
 
 export default function Main(props) {
   return (
     <div className="Main d-flex container">
       <div className="Main__column">
-        <Inputs />
+        <InputsForm />
       </div>
       <div className="Main__column">
         <Stage />
