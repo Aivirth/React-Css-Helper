@@ -1,6 +1,10 @@
 import * as actionTypes from "../actions/actionTypes";
+import uuid from "uuid/v4";
+
 const initialState = {
   top: {
+    name: "Border Top",
+    orientation: "top",
     width: {
       value: 1,
       inputType: "range",
@@ -12,7 +16,7 @@ const initialState = {
         step: "1",
         min: 0,
         max: 20,
-        name: "borderWidth"
+        name: `borderWidth-${uuid()}`
       }
     },
     style: {
@@ -34,7 +38,7 @@ const initialState = {
         ]
       },
       htmlProperties: {
-        name: "borderStyle"
+        name: `borderStyle-${uuid()}`
       }
     },
     color: {
@@ -44,13 +48,15 @@ const initialState = {
         label: "Border Color"
       },
       htmlProperties: {
-        name: "borderColor",
+        name: `borderColor-${uuid()}`,
         type: "color"
       }
     }
   },
 
   bottom: {
+    name: "Border Bottom",
+    orientation: "bottom",
     width: {
       value: 1,
       inputType: "range",
@@ -62,7 +68,7 @@ const initialState = {
         step: "1",
         min: 0,
         max: 20,
-        name: "borderWidth"
+        name: `borderWidth-${uuid()}`
       }
     },
     style: {
@@ -84,7 +90,7 @@ const initialState = {
         ]
       },
       htmlProperties: {
-        name: "borderStyle"
+        name: `borderStyle-${uuid()}`
       }
     },
     color: {
@@ -94,12 +100,14 @@ const initialState = {
         label: "Border Color"
       },
       htmlProperties: {
-        name: "borderColor",
+        name: `borderColor-${uuid()}`,
         type: "color"
       }
     }
   },
   left: {
+    name: "Border Left",
+    orientation: "left",
     width: {
       value: 1,
       inputType: "range",
@@ -111,7 +119,7 @@ const initialState = {
         step: "1",
         min: 0,
         max: 20,
-        name: "borderWidth"
+        name: `borderWidth-${uuid()}`
       }
     },
     style: {
@@ -133,7 +141,7 @@ const initialState = {
         ]
       },
       htmlProperties: {
-        name: "borderStyle"
+        name: `borderStyle-${uuid()}`
       }
     },
     color: {
@@ -143,12 +151,14 @@ const initialState = {
         label: "Border Color"
       },
       htmlProperties: {
-        name: "borderColor",
+        name: `borderColor-${uuid()}`,
         type: "color"
       }
     }
   },
   right: {
+    name: "Border Right",
+    orientation: "right",
     width: {
       value: 1,
       inputType: "range",
@@ -160,7 +170,7 @@ const initialState = {
         step: "1",
         min: 0,
         max: 20,
-        name: "borderWidth"
+        name: `borderWidth-${uuid()}`
       }
     },
     style: {
@@ -182,7 +192,7 @@ const initialState = {
         ]
       },
       htmlProperties: {
-        name: "borderStyle"
+        name: `borderStyle-${uuid()}`
       }
     },
     color: {
@@ -192,9 +202,33 @@ const initialState = {
         label: "Border Color"
       },
       htmlProperties: {
-        name: "borderColor",
+        name: `borderColor-${uuid()}`,
         type: "color"
       }
     }
   }
 };
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_BORDER:
+      return { ...state };
+
+    case actionTypes.UPDT_BORDERTOP:
+      return { ...state, top: action.payload };
+
+    case actionTypes.UPDT_BORDERBOTTOM:
+      return { ...state, bottom: action.payload };
+
+    case actionTypes.UPDT_BORDERRIGHT:
+      return { ...state, right: action.payload };
+
+    case actionTypes.UPDT_BORDERLEFT:
+      return { ...state, left: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export default reducer;
