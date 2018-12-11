@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Select from "../../UI/Select/Select";
+
 class Base extends Component {
   componentDidMount() {
     // console.log(this.props);
   }
 
   render() {
-    return <div>Base</div>;
+    return (
+      <div>
+        <h2> Base</h2>
+        <Select />
+      </div>
+    );
   }
 }
 

@@ -1,0 +1,17 @@
+.Select {
+  -webkit-appearance: none;
+  color: #fbfcfc;
+  text-transform: uppercase;
+  position: relative;
+  transition: width 0.5s;
+  will-change: width;
+  padding: 1rem 2rem;
+  background-color: $light-slate-grey;
+  cursor: pointer;
+
+  &__option {
+    padding: 1em;
+    cursor: pointer;
+    background-color: $light-slate-grey;
+  }
+}
