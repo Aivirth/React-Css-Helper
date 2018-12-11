@@ -11,7 +11,7 @@ class Base extends Component {
   render() {
     return (
       <div>
-        <h2> Base</h2>
+        <h2>Base</h2>
         <Select />
       </div>
     );
