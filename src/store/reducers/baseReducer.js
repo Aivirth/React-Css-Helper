@@ -1,4 +1,6 @@
 import * as actionTypes from "../actions/actionTypes";
+import uuid from "uuid/v4";
+
 const initialState = {
   width: {
     value: 200,
@@ -11,7 +13,7 @@ const initialState = {
       step: "1",
       min: 0,
       max: 500,
-      name: "width"
+      name: "width-" + uuid()
     }
   },
 
@@ -26,7 +28,7 @@ const initialState = {
       step: "1",
       min: 0,
       max: 500,
-      name: "height"
+      name: "height-" + uuid()
     }
   },
 
@@ -45,7 +47,7 @@ const initialState = {
     },
     htmlProperties: {
       type: "color",
-      name: "backgroundColor"
+      name: "backgroundColor-" + uuid()
     }
   }
 };

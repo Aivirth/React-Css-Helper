@@ -1,19 +1,28 @@
 import React from "react";
-
 export default function Range(props) {
-  const { id, label, min, max, step } = props;
+  const {
+    label,
+    id,
+    value,
+    changed,
+    identifier,
+    radiusDir,
+    htmlProperties
+  } = props;
   return (
     <React.Fragment>
       <input
-        type="range"
+        className="Range"
         id={id}
-        name={id}
-        min={min}
-        max={max}
-        defaultValue="0"
-        step={step}
+        value={value}
+        onChange={changed}
+        data-identifier={identifier}
+        data-radiusdir={radiusDir}
+        {...htmlProperties}
       />
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} : <strong>{value}</strong>
+      </label>
     </React.Fragment>
   );
 }
