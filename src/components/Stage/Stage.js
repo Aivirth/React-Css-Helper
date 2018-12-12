@@ -90,8 +90,9 @@ class Stage extends Component {
               isRevealActive ? "Stage__reveal--active" : ""
             }`}
           >
-            <Spectator styles={this.formatSpectatorDataFromStore()} />
-
+            {isRevealActive ? (
+              <Spectator styles={this.formatSpectatorDataFromStore()} />
+            ) : null}
             <div className="Stage__reveal__footer">
               <button
                 className="Stage__closeBtn"

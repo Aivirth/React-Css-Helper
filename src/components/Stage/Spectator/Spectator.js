@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClipboardList,
@@ -7,15 +7,50 @@ import {
 
 import { trimSpacesInTextArea } from "../../../helpers/helpers";
 
-export default function Spectator(props) {
-  let clipBoardIcon = <FontAwesomeIcon icon={faClipboardList} />;
+export default class Spectator extends Component {
+  constructor(props) {
+    super(props);
+    this.textarea = React.createRef();
+  }
 
-  const textareaValue = trimSpacesInTextArea(props.styles);
+  state = {
+    clipBoardIcon: <FontAwesomeIcon icon={faClipboardList} />
+  };
 
-  return (
-    <div className="Stage__reveal__content">
-      <textarea name="" id="" defaultValue={textareaValue} />
-      <button>Copy to Clipboard {clipBoardIcon}</button>
-    </div>
-  );
+  copyToClipboard = e => {
+    e.preventDefault();
+    this.textarea.current.select();
+    document.execCommand("copy");
+
+    this.setState({
+      clipBoardIcon: <FontAwesomeIcon icon={faClipboardCheck} />
+    });
+  };
+
+  componentWillUnmount() {
+    this.setState({
+      clipBoardIcon: <FontAwesomeIcon icon={faClipboardList} />
+    });
+  }
+
+  render() {
+    const textareaValue = trimSpacesInTextArea(this.props.styles);
+
+    return (
+      <div className="Stage__reveal__content">
+        <textarea
+          name=""
+          id=""
+          defaultValue={textareaValue}
+          ref={this.textarea}
+        />
+        <button
+          className="Stage__copyToClipboard"
+          onClick={this.copyToClipboard}
+        >
+          Copy to Clipboard {this.state.clipBoardIcon}
+        </button>
+      </div>
+    );
+  }
 }
