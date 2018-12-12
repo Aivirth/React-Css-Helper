@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Actor from "./Actor/Actor";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClipboardList,
-  faClipboardCheck
-} from "@fortawesome/free-solid-svg-icons";
-
-import { trimSpacesInTextArea } from "../../helpers/helpers";
+import Spectator from "./Spectator/Spectator";
 
 class Stage extends Component {
   state = {
@@ -85,8 +78,6 @@ class Stage extends Component {
   render() {
     const { isRevealActive } = this.state;
 
-    let clipBoardIcon = <FontAwesomeIcon icon={faClipboardList} />;
-
     return (
       <div className="Stage">
         <div className="Stage__wrapper">
@@ -99,16 +90,7 @@ class Stage extends Component {
               isRevealActive ? "Stage__reveal--active" : ""
             }`}
           >
-            <div className="Stage__reveal__content">
-              <textarea
-                name=""
-                id=""
-                defaultValue={trimSpacesInTextArea(
-                  this.formatSpectatorDataFromStore()
-                )}
-              />
-              <button>Copy to Clipboard {clipBoardIcon}</button>
-            </div>
+            <Spectator styles={this.formatSpectatorDataFromStore()} />
 
             <div className="Stage__reveal__footer">
               <button
