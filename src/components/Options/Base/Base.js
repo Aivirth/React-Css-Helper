@@ -1,18 +1,51 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import Select from "../../UI/Select/Select";
+import Input from "../../UI/Input";
 
 class Base extends Component {
   componentDidMount() {
-    // console.log(this.props);
+    console.log(this.props);
   }
 
+  inputChangeHandler = e => {
+    console.log(e);
+  };
+
   render() {
+    const { stylesFromState } = this.props;
+
+    let stylesArray = [];
+
+    for (let key in stylesFromState) {
+      stylesArray.push({
+        id: key,
+        config: this.props.stylesFromState[key]
+      });
+    }
+
     return (
       <div>
         <h2>Base</h2>
-        <Select />
+        {stylesArray.map(style => {
+          const {
+            htmlProperties,
+            elementConfig,
+            inputType,
+            value
+          } = style.config;
+
+          return (
+            <Input
+              key={style.id}
+              inputType={inputType}
+              htmlProperties={htmlProperties}
+              changed={this.inputChangeHandler}
+              elementConfig={elementConfig}
+              label={elementConfig.label}
+              value={value}
+            />
+          );
+        })}
       </div>
     );
   }
@@ -20,10 +53,12 @@ class Base extends Component {
 
 const mapStateToProps = state => {
   return {
-    width: state.base.width,
-    height: state.base.height,
-    margin: state.base.margin,
-    backgroundColor: state.base.backgroundColor
+    stylesFromState: {
+      width: state.base.width,
+      height: state.base.height,
+      margin: state.base.margin,
+      backgroundColor: state.base.backgroundColor
+    }
   };
 };
 

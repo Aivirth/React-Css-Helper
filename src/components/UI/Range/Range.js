@@ -11,6 +11,9 @@ export default function Range(props) {
   } = props;
   return (
     <React.Fragment>
+      <label htmlFor={id}>
+        {label} : <strong>{value}</strong>
+      </label>
       <input
         className="Range"
         id={id}
@@ -20,9 +23,6 @@ export default function Range(props) {
         data-radiusdir={radiusDir}
         {...htmlProperties}
       />
-      <label htmlFor={id}>
-        {label} : <strong>{value}</strong>
-      </label>
     </React.Fragment>
   );
 }

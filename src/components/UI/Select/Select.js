@@ -7,30 +7,28 @@ export default function Select(props) {
 
   let output = <p style={{ color: "red" }}>No select options found</p>;
 
-  // const options = elementConfig.options;
-
-  // if (options) {
-  //   output = (
-  //     <React.Fragment>
-  //       <label htmlFor={label}>{label}</label>
-  //       <select
-  //         className="Select"
-  //         disabled={disabled}
-  //         onChange={changed}
-  //         {...htmlProperties}
-  //       >
-  //         {elementConfig.options.map(option => (
-  //           <option
-  //             key={option.name}
-  //             className="Select__option"
-  //             value={option.value}
-  //           >
-  //             {option.name}
-  //           </option>
-  //         ))}
-  //       </select>
-  //     </React.Fragment>
-  //   );
-  // }
+  if (elementConfig.options) {
+    output = (
+      <React.Fragment>
+        <label htmlFor={label}>{label}</label>
+        <select
+          className="Select"
+          disabled={disabled}
+          onChange={changed}
+          {...htmlProperties}
+        >
+          {elementConfig.options.map(option => (
+            <option
+              key={option.name}
+              className="Select__option"
+              value={option.value}
+            >
+              {option.name}
+            </option>
+          ))}
+        </select>
+      </React.Fragment>
+    );
+  }
   return output;
 }

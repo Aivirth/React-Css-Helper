@@ -5,7 +5,7 @@ import Borders from "../../components/Options/Borders/Borders";
 import BoxShadow from "../../components/Options/BoxShadow/BoxShadow";
 import { Route } from "react-router-dom";
 
-export default function Inputs() {
+export default function InputsForm() {
   return (
     <div className="Inputs">
       <Route path="/base" component={Base} />
