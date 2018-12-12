@@ -85,7 +85,9 @@ export default function Input(props) {
       break;
 
     default:
-      inputElement = <div>Input type not recognized by application</div>;
+      inputElement = (
+        <p style={{ color: "red" }}>Input type not recognized by application</p>
+      );
   }
 
   return inputElement;

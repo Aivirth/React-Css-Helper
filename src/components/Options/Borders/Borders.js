@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 
+import Switch from "../../UI/Switch/Switch";
+
 export default class Borders extends Component {
   render() {
-    return <div>Borders</div>;
+    return (
+      <div>
+        <h1>Borders</h1>
+        <Switch />
+      </div>
+    );
   }
 }

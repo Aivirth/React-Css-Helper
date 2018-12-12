@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Input from "../../UI/Input";
+// import { convertStateObjToArr } from "../../../helpers/helpers";
 
 class Base extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   inputChangeHandler = e => {
-    console.log(e);
+    console.log(e.target);
   };
 
   render() {
