@@ -48,7 +48,7 @@ export default class Spectator extends Component {
           className="Stage__copyToClipboard"
           onClick={this.copyToClipboard}
         >
-          Copy to Clipboard {this.state.clipBoardIcon}
+          Copy to Clipboard{this.state.clipBoardIcon}
         </button>
       </div>
     );
