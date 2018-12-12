@@ -8,6 +8,8 @@ import {
   faClipboardCheck
 } from "@fortawesome/free-solid-svg-icons";
 
+import { trimSpacesInTextArea } from "../../helpers/helpers";
+
 class Stage extends Component {
   state = {
     isRevealActive: false
@@ -24,6 +26,7 @@ class Stage extends Component {
   onRevealCloseButtonClickHandler = () => {
     this.setState({ isRevealActive: false });
   };
+  var;
 
   formatSpectatorDataFromStore = () => {
     const { base, borders, boxShadow } = this.props.computedStylesFromState;
@@ -31,7 +34,7 @@ class Stage extends Component {
     return `
     width: ${base.width}px; 
     height: ${base.height}px; 
-    margin: ${base.margin}; 
+    margin: ${base.margin};
     background-color: ${base.backgroundColor}; 
     border-top: ${borders.top.width}px ${borders.top.style} ${
       borders.top.color
@@ -97,9 +100,13 @@ class Stage extends Component {
             }`}
           >
             <div className="Stage__reveal__content">
-              <textarea name="" id="">
-                {this.formatSpectatorDataFromStore()}
-              </textarea>
+              <textarea
+                name=""
+                id=""
+                defaultValue={trimSpacesInTextArea(
+                  this.formatSpectatorDataFromStore()
+                )}
+              />
               <button>Copy to Clipboard {clipBoardIcon}</button>
             </div>
 
