@@ -2,6 +2,7 @@ import React from "react";
 import Select from "./Select/Select";
 import Range from "./Range/Range";
 import Checkbox from "./Checkbox/Checkbox";
+import Switch from "./Switch/Switch";
 
 export default function Input(props) {
   const {
@@ -67,16 +68,15 @@ export default function Input(props) {
 
       break;
 
-      // case "switch":
-      //   inputElement = (
-      //     <Switch
-      //       value={value}
-      //       htmlProperties={htmlProperties}
-      //       dataSets={dataSets}
-      //       label={label}
-      //       changed={changed}
-      //     />
-      //   );
+    case "switch":
+      inputElement = (
+        <Switch
+          value={value}
+          htmlProperties={htmlProperties}
+          label={label}
+          changed={changed}
+        />
+      );
 
       break;
 
