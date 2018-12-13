@@ -21,8 +21,8 @@ class Base extends Component {
     }
 
     return (
-      <div>
-        <h2>Base</h2>
+      <React.Fragment>
+        <h2 className="Inputs__title">Base</h2>
         {stylesArray.map(style => {
           const {
             htmlProperties,
@@ -43,7 +43,7 @@ class Base extends Component {
             />
           );
         })}
-      </div>
+      </React.Fragment>
     );
   }
 }

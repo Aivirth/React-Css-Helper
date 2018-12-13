@@ -4,7 +4,7 @@ export default class Borders extends Component {
   render() {
     return (
       <div>
-        <h1>Borders</h1>
+        <h2 className="Inputs__title">Borders</h2>
       </div>
     );
   }
