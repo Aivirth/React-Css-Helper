@@ -1,4 +1,38 @@
 .Inputs {
   margin-top: 3rem;
   padding: 0 2rem 0 2rem;
+  &__title {
+    flex: 0 0 100%;
+  }
+  &__wrapper {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+
+  &__label {
+    flex: 0 0 50%;
+    text-align: left;
+  }
+
+  &__control {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__color {
+    border: 0px;
+    width: 6rem;
+    height: 3rem;
+    &::-webkit-color-swatch-wrapper {
+      padding: 0px;
+    }
+
+    &::-webkit-color-swatch {
+      border: 2px solid $blue-charcoal;
+      cursor: crosshair;
+    }
+  }
 }
