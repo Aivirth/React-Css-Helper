@@ -1,11 +1,11 @@
 import React from "react";
 
 export default props => {
-  const { changed, id, value } = props;
+  const { changed, id, value, label } = props;
   return (
     <div className="Inputs__wrapper">
       <label htmlFor={id} className="Inputs__label">
-        Color: <strong>{value}</strong>
+        {label}: <strong>{value}</strong>
       </label>
       <div className="Inputs__control">
         <input

@@ -33,8 +33,12 @@ class Base extends Component {
 
       case "height":
         updtBaseHeight(propertyCopy);
-
         break;
+
+      case "backgroundColor":
+        updtBaseBgColor(propertyCopy);
+        break;
+
       default:
         return null;
     }
