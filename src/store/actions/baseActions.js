@@ -6,9 +6,30 @@ export const fetchBase = () => {
   };
 };
 
-export const updtBase = payload => {
+export const updtBaseWidth = payload => {
   return {
-    type: actionTypes.UPDT_BASE,
+    type: actionTypes.UPDT_BASEWIDTH,
+    payload: payload
+  };
+};
+
+export const updtBaseHeight = payload => {
+  return {
+    type: actionTypes.UPDT_BASEHEIGHT,
+    payload: payload
+  };
+};
+
+export const updtBaseMargin = payload => {
+  return {
+    type: actionTypes.UPDT_BASEMARGIN,
+    payload: payload
+  };
+};
+
+export const updtBaseBgColor = payload => {
+  return {
+    type: actionTypes.UPDT_BASEBGCOLOR,
     payload: payload
   };
 };

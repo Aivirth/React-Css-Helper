@@ -1,4 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
+
 import uuid from "uuid/v4";
 
 const initialState = {
@@ -68,6 +69,7 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.UPDT_BASEBGCOLOR:
       return { ...state, backgroundColor: action.payload };
+
     default:
       return state;
   }

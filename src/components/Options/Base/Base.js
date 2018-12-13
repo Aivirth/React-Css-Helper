@@ -3,10 +3,46 @@ import { connect } from "react-redux";
 import Input from "../../UI/Input";
 // import { convertStateObjToArr } from "../../../helpers/helpers";
 
+import {
+  updtBaseWidth,
+  updtBaseHeight,
+  updtBaseBgColor
+} from "../../../store/actions/baseActions";
+
 class Base extends Component {
-  inputChangeHandler = e => {
-    console.log(e.target);
+  inputChangeHandler = (e, identifier) => {
+    const { updtBaseWidth, updtBaseHeight, updtBaseBgColor } = this.props;
+    const storeCopy = {
+      ...this.props.stylesFromState
+    };
+    const propertyCopy = {
+      ...storeCopy[identifier]
+    };
+
+    if (propertyCopy.inputType === "range") {
+      propertyCopy.value = +e.target.value;
+    } else {
+      propertyCopy.value = e.target.value;
+    }
+    // storeCopy[identifier] = propertyCopy;
+
+    switch (identifier) {
+      case "width":
+        updtBaseWidth(propertyCopy);
+        break;
+
+      case "height":
+        updtBaseHeight(propertyCopy);
+
+        break;
+      default:
+        return null;
+    }
   };
+
+  componentDidMount() {
+    console.log("Base:", this.props);
+  }
 
   render() {
     const { stylesFromState } = this.props;
@@ -36,7 +72,7 @@ class Base extends Component {
               key={style.id}
               inputType={inputType}
               htmlProperties={htmlProperties}
-              changed={this.inputChangeHandler}
+              changed={e => this.inputChangeHandler(e, style.id)}
               elementConfig={elementConfig}
               label={elementConfig.label}
               value={value}
@@ -59,4 +95,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Base);
+export default connect(
+  mapStateToProps,
+  { updtBaseWidth, updtBaseHeight, updtBaseBgColor }
+)(Base);
