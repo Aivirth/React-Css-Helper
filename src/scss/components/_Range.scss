@@ -104,6 +104,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
     //   (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2
     // );
     margin-top: $thumb-margin-top;
+    cursor: col-resize;
   }
 
   &::-moz-range-track {
