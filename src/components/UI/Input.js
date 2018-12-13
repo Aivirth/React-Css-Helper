@@ -3,6 +3,7 @@ import Select from "./Select/Select";
 import Range from "./Range/Range";
 import Checkbox from "./Checkbox/Checkbox";
 import Switch from "./Switch/Switch";
+import ColorPicker from "./ColorPicker/ColorPicker";
 
 export default function Input(props) {
   const {
@@ -42,17 +43,17 @@ export default function Input(props) {
       );
       break;
 
-    // case "color":
-    //   inputElement = (
-    //     <ColorPicker
-    //       value={value}
-    //       htmlProperties={htmlProperties}
-    //       label={label}
-    //       dataSets={dataSets}
-    //       changed={changed}
-    //     />
-    //   );
-    //   break;
+    case "color":
+      inputElement = (
+        <ColorPicker
+          value={value}
+          htmlProperties={htmlProperties}
+          label={label}
+          dataSets={dataSets}
+          changed={changed}
+        />
+      );
+      break;
 
     case "select":
       inputElement = (
