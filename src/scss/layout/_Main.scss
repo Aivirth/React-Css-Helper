@@ -3,5 +3,12 @@
 
   &__column {
     flex: 0 0 50%;
+
+    &:first-child,
+    &:nth-child(2) {
+      @include respond(tab-port) {
+        flex: 0 0 100%;
+      }
+    }
   }
 }
