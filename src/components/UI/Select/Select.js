@@ -3,16 +3,18 @@ import React from "react";
 export default function Select(props) {
   const { elementConfig, label, changed, identifier, htmlProperties } = props;
 
-  let disabled = true;
+  let disabled = false;
 
   let output = <p style={{ color: "red" }}>No select options found</p>;
 
   if (elementConfig.options) {
     output = (
-      <React.Fragment>
-        <label htmlFor={label}>{label}</label>
+      <div className="Inputs__wrapper">
+        <label className="Inputs__label" htmlFor={label}>
+          {label}
+        </label>
         <select
-          className="Select"
+          className="Select Inputs__control"
           disabled={disabled}
           onChange={changed}
           {...htmlProperties}
@@ -20,14 +22,14 @@ export default function Select(props) {
           {elementConfig.options.map(option => (
             <option
               key={option.name}
-              className="Select__option"
+              className="Select__option "
               value={option.value}
             >
               {option.name}
             </option>
           ))}
         </select>
-      </React.Fragment>
+      </div>
     );
   }
   return output;
