@@ -10,7 +10,7 @@ class Borders extends Component {
   }
 
   inputChangeHandler = (e, identifier) => {
-    console.log(e, identifier);
+    console.log(e.target, e.target.value, identifier);
   };
 
   render() {
