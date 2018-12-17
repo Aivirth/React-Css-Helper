@@ -1,14 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import AccordionItem from "./AccordionItem/AccordionItem";
 
-export default class Accordion extends Component {
-  render() {
-    const { tabTitle } = this.props;
-    return (
-      <div className="Accordion">
-        <AccordionItem />
-        <AccordionItem />
-      </div>
-    );
-  }
+export default function Accordion(props) {
+  return <div className="Accordion">{props.children}</div>;
 }

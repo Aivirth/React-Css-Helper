@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Input from "../../UI/Input";
+import Accordion from "../../UI/Accordion/Accordion";
+import AccordtionItem from "../../UI/Accordion/AccordionItem/AccordionItem";
 
 class Borders extends Component {
   componentDidMount() {
-    console.log("Borders:", this.props);
+    // console.log("Borders:", this.props);
   }
 
   inputChangeHandler = (e, identifier) => {
@@ -41,39 +43,40 @@ class Borders extends Component {
     });
 
     // console.log(propertiesArray);
-    // console.log(formattedData);
+    console.log("Borders:", formattedData);
 
     return (
       <React.Fragment>
         <h2 className="Inputs__title">Borders</h2>
 
-        {formattedData.map(border => {
-          return (
-            <React.Fragment key={border.id}>
-              <h3>{border.id}</h3>
-              {border.properties.map(property => {
-                const {
-                  htmlProperties,
-                  elementConfig,
-                  inputType,
-                  value
-                } = property;
+        <Accordion>
+          {formattedData.map(border => {
+            return (
+              <AccordtionItem key={border.id} tabTitle={border.id}>
+                {border.properties.map(property => {
+                  const {
+                    htmlProperties,
+                    elementConfig,
+                    inputType,
+                    value
+                  } = property;
 
-                return (
-                  <Input
-                    key={htmlProperties.name}
-                    inputType={inputType}
-                    htmlProperties={htmlProperties}
-                    changed={e => this.inputChangeHandler(e, border.id)}
-                    elementConfig={elementConfig}
-                    label={elementConfig.label}
-                    value={value}
-                  />
-                );
-              })}
-            </React.Fragment>
-          );
-        })}
+                  return (
+                    <Input
+                      key={htmlProperties.name}
+                      inputType={inputType}
+                      htmlProperties={htmlProperties}
+                      changed={e => this.inputChangeHandler(e, border.id)}
+                      elementConfig={elementConfig}
+                      label={elementConfig.label}
+                      value={value}
+                    />
+                  );
+                })}
+              </AccordtionItem>
+            );
+          })}
+        </Accordion>
       </React.Fragment>
     );
   }
