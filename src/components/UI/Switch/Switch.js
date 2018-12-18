@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Switch(props) {
-  const { changed, id, value, htmlProperties } = props;
+  const { changed, id, value, htmlProperties, dataSets } = props;
 
   return (
     <div>
@@ -10,6 +10,7 @@ export default function Switch(props) {
         <input
           onChange={changed}
           {...htmlProperties}
+          {...dataSets}
           id={htmlProperties.label}
           data-switch="isSwitch"
           className="Switch__input"

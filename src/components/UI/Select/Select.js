@@ -1,9 +1,7 @@
 import React from "react";
 
 export default function Select(props) {
-  const { elementConfig, label, changed, identifier, htmlProperties } = props;
-
-  let disabled = false;
+  const { elementConfig, label, changed, dataSets, htmlProperties } = props;
 
   let output = <p style={{ color: "red" }}>No select options found</p>;
 
@@ -15,9 +13,9 @@ export default function Select(props) {
         </label>
         <select
           className="Select Inputs__control"
-          disabled={disabled}
           onChange={changed}
           {...htmlProperties}
+          {...dataSets}
         >
           {elementConfig.options.map(option => (
             <option

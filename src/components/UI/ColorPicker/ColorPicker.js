@@ -1,7 +1,7 @@
 import React from "react";
 
 export default props => {
-  const { changed, id, value, label } = props;
+  const { changed, id, value, label, dataSets } = props;
   return (
     <div className="Inputs__wrapper">
       <label htmlFor={id} className="Inputs__label">
@@ -15,6 +15,7 @@ export default props => {
           name={id}
           onChange={changed}
           value={value}
+          {...dataSets}
         />
       </div>
     </div>

@@ -7,7 +7,8 @@ export default function Range(props) {
     changed,
     identifier,
     radiusDir,
-    htmlProperties
+    htmlProperties,
+    dataSets
   } = props;
   return (
     <div className="Inputs__wrapper">
@@ -22,6 +23,7 @@ export default function Range(props) {
         data-identifier={identifier}
         data-radiusdir={radiusDir}
         {...htmlProperties}
+        {...dataSets}
       />
     </div>
   );

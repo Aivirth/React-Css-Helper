@@ -4,7 +4,6 @@ import uuid from "uuid/v4";
 const initialState = {
   top: {
     name: "Border Top",
-    orientation: "top",
     width: {
       value: 1,
       inputType: "range",
@@ -17,6 +16,9 @@ const initialState = {
         min: 0,
         max: 20,
         name: `borderWidth-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "width"
       }
     },
     style: {
@@ -39,6 +41,9 @@ const initialState = {
       },
       htmlProperties: {
         name: `borderStyle-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "style"
       }
     },
     color: {
@@ -50,13 +55,15 @@ const initialState = {
       htmlProperties: {
         name: `borderColor-${uuid()}`,
         type: "color"
+      },
+      dataSets: {
+        "data-target": "color"
       }
     }
   },
 
   bottom: {
     name: "Border Bottom",
-    orientation: "bottom",
     width: {
       value: 1,
       inputType: "range",
@@ -69,6 +76,9 @@ const initialState = {
         min: 0,
         max: 20,
         name: `borderWidth-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "width"
       }
     },
     style: {
@@ -91,6 +101,9 @@ const initialState = {
       },
       htmlProperties: {
         name: `borderStyle-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "style"
       }
     },
     color: {
@@ -102,12 +115,14 @@ const initialState = {
       htmlProperties: {
         name: `borderColor-${uuid()}`,
         type: "color"
+      },
+      dataSets: {
+        "data-target": "color"
       }
     }
   },
   left: {
     name: "Border Left",
-    orientation: "left",
     width: {
       value: 1,
       inputType: "range",
@@ -120,6 +135,9 @@ const initialState = {
         min: 0,
         max: 20,
         name: `borderWidth-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "width"
       }
     },
     style: {
@@ -142,6 +160,9 @@ const initialState = {
       },
       htmlProperties: {
         name: `borderStyle-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "style"
       }
     },
     color: {
@@ -153,12 +174,14 @@ const initialState = {
       htmlProperties: {
         name: `borderColor-${uuid()}`,
         type: "color"
+      },
+      dataSets: {
+        "data-target": "color"
       }
     }
   },
   right: {
     name: "Border Right",
-    orientation: "right",
     width: {
       value: 1,
       inputType: "range",
@@ -171,6 +194,9 @@ const initialState = {
         min: 0,
         max: 20,
         name: `borderWidth-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "width"
       }
     },
     style: {
@@ -193,6 +219,9 @@ const initialState = {
       },
       htmlProperties: {
         name: `borderStyle-${uuid()}`
+      },
+      dataSets: {
+        "data-target": "style"
       }
     },
     color: {
@@ -204,6 +233,9 @@ const initialState = {
       htmlProperties: {
         name: `borderColor-${uuid()}`,
         type: "color"
+      },
+      dataSets: {
+        "data-target": "color"
       }
     }
   }

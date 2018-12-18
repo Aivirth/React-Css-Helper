@@ -4,19 +4,70 @@ import Input from "../../UI/Input";
 import Accordion from "../../UI/Accordion/Accordion";
 import AccordtionItem from "../../UI/Accordion/AccordionItem/AccordionItem";
 
+import {
+  updtBorderTop,
+  updtBorderBottom,
+  updtBorderLeft,
+  updtBorderRight
+} from "../../../store/actions/borderActions";
+
 class Borders extends Component {
   componentDidMount() {
     // console.log("Borders:", this.props);
   }
 
   inputChangeHandler = (e, identifier) => {
-    console.log(e.target, e.target.value, identifier);
+    const {
+      updtBorderTop,
+      updtBorderBottom,
+      updtBorderLeft,
+      updtBorderRight
+    } = this.props;
+
+    const storeCopy = {
+      ...this.props.stylesFromState
+    };
+
+    const propertyCopy = {
+      ...storeCopy[identifier]
+    };
+
+    const subPropertyCopy = {
+      ...propertyCopy[e.target.dataset.target]
+    };
+
+    if (subPropertyCopy.inputType === "range") {
+      subPropertyCopy.value = +e.target.value;
+    } else {
+      subPropertyCopy.value = e.target.value;
+    }
+
+    propertyCopy[e.target.dataset.target] = subPropertyCopy;
+
+    switch (identifier) {
+      case "top":
+        updtBorderTop(propertyCopy);
+        break;
+
+      case "bottom":
+        updtBorderBottom(propertyCopy);
+        break;
+
+      case "right":
+        updtBorderRight(propertyCopy);
+        break;
+
+      case "left":
+        updtBorderLeft(propertyCopy);
+        break;
+
+      default:
+        return null;
+    }
   };
 
   render() {
     const { stylesFromState } = this.props;
-
-    // console.log("Borders", stylesFromState);
 
     let propertiesArray = [];
 
@@ -43,7 +94,7 @@ class Borders extends Component {
     });
 
     // console.log(propertiesArray);
-    console.log("Borders:", formattedData);
+    // console.log("Borders:", formattedData);
 
     return (
       <React.Fragment>
@@ -58,7 +109,8 @@ class Borders extends Component {
                     htmlProperties,
                     elementConfig,
                     inputType,
-                    value
+                    value,
+                    dataSets
                   } = property;
 
                   return (
@@ -70,6 +122,7 @@ class Borders extends Component {
                       elementConfig={elementConfig}
                       label={elementConfig.label}
                       value={value}
+                      dataSets={dataSets}
                     />
                   );
                 })}
@@ -93,4 +146,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Borders);
+export default connect(
+  mapStateToProps,
+  {
+    updtBorderTop,
+    updtBorderBottom,
+    updtBorderLeft,
+    updtBorderRight
+  }
+)(Borders);

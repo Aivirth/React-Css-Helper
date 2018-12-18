@@ -1,13 +1,14 @@
 import React from "react";
 
 export default function Checkbox(props) {
-  const { changed, identifier, value, htmlProperties, label } = props;
+  const { changed, identifier, value, htmlProperties, label, dataSets } = props;
 
   return (
     <React.Fragment>
       <input
         className="Checkbox__input"
         {...htmlProperties}
+        {...dataSets}
         style={{ display: "none" }}
         onChange={changed}
         value={value}
