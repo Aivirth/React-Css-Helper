@@ -6,22 +6,23 @@ export const trimSpacesInTextArea = string => {
   return cleanedString;
 };
 
-// export const convertStateObjToArr = (
-//   stylesFromStateObj = isRequired(),
-//   componentProps = isRequired()
-// ) => {
-//   const outputArray = [];
-
-//   for (let key in stylesFromStateObj) {
-//     outputArray.push({
-//       id: key,
-//       config: componentProps.stylesFromStateObj[key]
-//     });
-//   }
-
-//   return outputArray;
-// };
-
 const isRequired = () => {
   throw new Error("Parameter Missing");
+};
+
+export const hexToRgb = hex => {
+  let r = null;
+  // long version
+  r = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+  if (r) {
+    return r.slice(1, 4).map(x => parseInt(x, 16));
+  }
+
+  // short version
+  r = hex.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i);
+  if (r) {
+    return r.slice(1, 4).map(x => 0x11 * parseInt(x, 16));
+  }
+
+  return r;
 };
