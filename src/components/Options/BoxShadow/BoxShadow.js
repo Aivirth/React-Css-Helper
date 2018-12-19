@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Input from "../../UI/Input";
+import {
+  updtBoxShadowOffsetY,
+  updtBoxShadowOffsetX,
+  updtBoxShadowBlur,
+  updtBoxShadowSpread,
+  updtBoxShadowColor,
+  updtBoxShadowOpacity,
+  updtBoxShadowInset
+} from "../../../store/actions/boxShadowActions";
+
+import { convertStringToBoolean } from "../../../helpers/helpers";
 
 class BoxShadow extends Component {
   componentDidMount() {
@@ -9,6 +20,65 @@ class BoxShadow extends Component {
 
   inputChangeHandler = (e, identifier) => {
     console.log(e.target.value);
+
+    const {
+      updtBoxShadowOffsetY,
+      updtBoxShadowOffsetX,
+      updtBoxShadowBlur,
+      updtBoxShadowSpread,
+      updtBoxShadowColor,
+      updtBoxShadowOpacity,
+      updtBoxShadowInset
+    } = this.props;
+
+    const storeCopy = {
+      ...this.props.stylesFromState
+    };
+    const propertyCopy = {
+      ...storeCopy[identifier]
+    };
+
+    if (propertyCopy.inputType === "range") {
+      propertyCopy.value = +e.target.value;
+    } else {
+      propertyCopy.value = e.target.value;
+    }
+
+    if (
+      e.target.dataset.switch === "isSwitch" &&
+      e.target.type === "checkbox"
+    ) {
+      propertyCopy.value = e.target.checked;
+    }
+
+    switch (identifier) {
+      case "offsetY":
+        updtBoxShadowOffsetY(propertyCopy);
+        break;
+
+      case "offsetX":
+        updtBoxShadowOffsetX(propertyCopy);
+        break;
+
+      case "blur":
+        updtBoxShadowBlur(propertyCopy);
+        break;
+      case "spread":
+        updtBoxShadowSpread(propertyCopy);
+        break;
+      case "color":
+        updtBoxShadowColor(propertyCopy);
+        break;
+      case "opacity":
+        updtBoxShadowOpacity(propertyCopy);
+        break;
+      case "inset":
+        updtBoxShadowInset(propertyCopy);
+        break;
+
+      default:
+        return null;
+    }
   };
 
   render() {
@@ -67,4 +137,15 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(BoxShadow);
+export default connect(
+  mapStateToProps,
+  {
+    updtBoxShadowOffsetY,
+    updtBoxShadowOffsetX,
+    updtBoxShadowBlur,
+    updtBoxShadowSpread,
+    updtBoxShadowColor,
+    updtBoxShadowOpacity,
+    updtBoxShadowInset
+  }
+)(BoxShadow);

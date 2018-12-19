@@ -1,4 +1,5 @@
 import React from "react";
+import { convertStringToBoolean } from "../../../helpers/helpers";
 
 export default function Switch(props) {
   const { label, value, changed, htmlProperties, dataSets } = props;
@@ -14,7 +15,7 @@ export default function Switch(props) {
             {...dataSets}
             className="Switch__input"
             value={value}
-            defaultChecked={value}
+            checked={convertStringToBoolean(value)}
             id={htmlProperties.name}
           />
           <span className="Switch__slider" />

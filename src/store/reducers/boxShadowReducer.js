@@ -90,7 +90,7 @@ const initialState = {
   },
 
   inset: {
-    value: true,
+    value: false,
     inputType: "switch",
     elementConfig: {
       label: "Inset"
