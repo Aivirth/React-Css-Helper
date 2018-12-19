@@ -24,6 +24,8 @@ class Stage extends Component {
   formatSpectatorDataFromStore = () => {
     const { base, borders, boxShadow } = this.props.computedStylesFromState;
 
+    const boxShadowInset = boxShadow.inset ? "inset" : "";
+
     return `
     width: ${base.width}px; 
     height: ${base.height}px; 
@@ -43,11 +45,13 @@ class Stage extends Component {
     }; 
     box-shadow: ${boxShadow.offsetY}px ${boxShadow.offsetX}px ${
       boxShadow.blur
-    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadow.inset};`;
+    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset};`;
   };
 
   formatActorStylesFromStore = () => {
     const { base, borders, boxShadow } = this.props.computedStylesFromState;
+
+    const boxShadowInset = boxShadow.inset ? "inset" : "";
 
     return {
       width: `${base.width}px`,
@@ -71,7 +75,7 @@ class Stage extends Component {
       //TODO: color needs to be converted into rgba and combined with opacity
       boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
         boxShadow.blur
-      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadow.inset}`
+      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset}`
     };
   };
 

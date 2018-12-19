@@ -1,4 +1,6 @@
 import * as actionTypes from "../actions/actionTypes";
+import uuid from "uuid/v4";
+
 const initialState = {
   offsetY: {
     value: 10,
@@ -88,14 +90,14 @@ const initialState = {
   },
 
   inset: {
-    value: "",
+    value: true,
     inputType: "switch",
     elementConfig: {
       label: "Inset"
     },
     htmlProperties: {
       type: "checkbox",
-      name: "inset"
+      name: `inset-${uuid()}`
     },
     dataSets: {
       "data-switch": "isSwitch"
