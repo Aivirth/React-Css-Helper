@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
-export default class BorderRadius extends Component {
+import { connect } from "react-redux";
+import Input from "../../UI/Input";
+class BorderRadius extends Component {
   render() {
     return (
       <div>
@@ -9,3 +10,13 @@ export default class BorderRadius extends Component {
     );
   }
 }
+
+// const mapStateToProps = state => {
+//   return {
+//     stylesFromState: {
+
+//     }
+//   }
+// }
+
+export default BorderRadius;

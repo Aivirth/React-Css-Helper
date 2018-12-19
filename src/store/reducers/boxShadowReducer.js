@@ -91,12 +91,14 @@ const initialState = {
     value: "",
     inputType: "switch",
     elementConfig: {
-      label: "Inset",
-      isSwitch: true
+      label: "Inset"
     },
     htmlProperties: {
       type: "checkbox",
       name: "inset"
+    },
+    dataSets: {
+      "data-switch": "isSwitch"
     }
   }
 };

@@ -74,7 +74,9 @@ export default function Input(props) {
         <Switch
           value={value}
           htmlProperties={htmlProperties}
+          dataSets={dataSets}
           label={label}
+          elementConfig={elementConfig}
           changed={changed}
         />
       );
