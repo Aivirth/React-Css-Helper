@@ -1,10 +1,19 @@
 .Inputs {
   margin-top: 5rem;
-  padding: 0 2rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__container {
+    padding: 0 2rem 0 2rem;
+    flex: 0 0 80%;
+  }
+
   &__title {
     flex: 0 0 100%;
-
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
   }
   &__wrapper {
     display: flex;

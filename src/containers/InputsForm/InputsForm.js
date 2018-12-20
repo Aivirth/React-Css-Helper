@@ -8,10 +8,12 @@ import { Route } from "react-router-dom";
 export default function InputsForm() {
   return (
     <div className="Inputs">
-      <Route path="/base" component={Base} />
-      <Route path="/box-shadow" component={BoxShadow} />
-      <Route path="/borders" component={Borders} />
-      <Route path="/border-radius" component={BorderRadius} />
+      <div className="Inputs__container">
+        <Route path="/base" component={Base} />
+        <Route path="/box-shadow" component={BoxShadow} />
+        <Route path="/borders" component={Borders} />
+        <Route path="/border-radius" component={BorderRadius} />
+      </div>
     </div>
   );
 }
