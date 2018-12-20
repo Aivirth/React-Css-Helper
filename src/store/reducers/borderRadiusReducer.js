@@ -2,61 +2,152 @@ import * as actionTypes from "../actions/actionTypes";
 import uuid from "uuid/v4";
 
 const initialState = {
-  borderTopLeftRadius: {
-    inputType: "range",
-    elementConfig: {
-      label: "Border Top-Left Radius"
+  topLeft: {
+    radiusX: {
+      value: 50,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Top-Left Radius X"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderTopLeftRadiusX" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusX"
+      }
     },
-    htmlProperties: {
-      type: "range",
-      step: "1",
-      min: 0,
-      max: 300,
-      name: "borderTopLeftRadius" + uuid()
-    },
-    radii: { radiusX: 50, radiusY: 20 }
+    radiusY: {
+      value: 20,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Top-Left Radius Y"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderTopLeftRadiusY" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusY"
+      }
+    }
   },
-  borderTopRightRadius: {
-    inputType: "range",
-    elementConfig: {
-      label: "Border Top-Right Radius"
+
+  topRight: {
+    radiusX: {
+      value: 50,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Top-Right Radius X"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderTopRightRadiusX" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusX"
+      }
     },
-    htmlProperties: {
-      type: "range",
-      step: "1",
-      min: 0,
-      max: 300,
-      name: "borderTopRightRadius" + uuid()
-    },
-    radii: { radiusX: 50, radiusY: 20 }
+    radiusY: {
+      value: 20,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Top-Right Radius Y"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderTopRightRadiusY" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusY"
+      }
+    }
   },
-  borderBottomLeftRadius: {
-    inputType: "range",
-    elementConfig: {
-      label: "Border Bottom-Left Radius"
+
+  bottomRight: {
+    radiusX: {
+      value: 50,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Bottom-Right Radius X"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderBottomRightRadiusX" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusX"
+      }
     },
-    htmlProperties: {
-      type: "range",
-      step: "1",
-      min: 0,
-      max: 300,
-      name: "borderBottomLeftRadius" + uuid()
-    },
-    radii: { radiusX: 50, radiusY: 20 }
+    radiusY: {
+      value: 20,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Bottom-Right Radius Y"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderBottomRightRadiusY" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusY"
+      }
+    }
   },
-  borderBottomRightRadius: {
-    inputType: "range",
-    elementConfig: {
-      label: "Border Bottom-Right Radius"
+
+  bottomLeft: {
+    radiusX: {
+      value: 50,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Bottom-Left Radius X"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderBottomLeftRadiusX" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusX"
+      }
     },
-    htmlProperties: {
-      type: "range",
-      step: "1",
-      min: 0,
-      max: 300,
-      name: "borderBottomRightRadius" + uuid()
-    },
-    radii: { radiusX: 50, radiusY: 20 }
+    radiusY: {
+      value: 20,
+      inputType: "range",
+      elementConfig: {
+        label: "Border Bottom-Left Radius Y"
+      },
+      htmlProperties: {
+        type: "range",
+        step: "1",
+        min: 0,
+        max: 300,
+        name: "borderBottomLeftRadiusY" + uuid()
+      },
+      dataSets: {
+        "data-radius": "radiusY"
+      }
+    }
   }
 };
 

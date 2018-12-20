@@ -67,7 +67,7 @@ class Stage extends Component {
     border-bottom-right-radius: ${borderRadius.topRight.radiusX}px ${
       borderRadius.topRight.radiusY
     }px;
-     `;
+    `;
   };
 
   formatActorStylesFromStore = () => {
@@ -210,20 +210,20 @@ const mapStateToProps = state => {
       },
       borderRadius: {
         topLeft: {
-          radiusX: state.borderRadius.borderTopLeftRadius.radii.radiusX,
-          radiusY: state.borderRadius.borderTopLeftRadius.radii.radiusY
+          radiusX: state.borderRadius.topLeft.radiusX.value,
+          radiusY: state.borderRadius.topLeft.radiusY.value
         },
         topRight: {
-          radiusX: state.borderRadius.borderTopRightRadius.radii.radiusX,
-          radiusY: state.borderRadius.borderTopRightRadius.radii.radiusY
+          radiusX: state.borderRadius.topRight.radiusX.value,
+          radiusY: state.borderRadius.topRight.radiusY.value
         },
         bottomLeft: {
-          radiusX: state.borderRadius.borderBottomLeftRadius.radii.radiusX,
-          radiusY: state.borderRadius.borderBottomLeftRadius.radii.radiusY
+          radiusX: state.borderRadius.bottomLeft.radiusX.value,
+          radiusY: state.borderRadius.bottomLeft.radiusY.value
         },
         bottomRight: {
-          radiusX: state.borderRadius.borderBottomRightRadius.radii.radiusX,
-          radiusY: state.borderRadius.borderBottomRightRadius.radii.radiusY
+          radiusX: state.borderRadius.bottomRight.radiusX.value,
+          radiusY: state.borderRadius.bottomRight.radiusY.value
         }
       }
     }
