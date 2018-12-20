@@ -14,12 +14,12 @@ import {
 import { convertStringToBoolean } from "../../../helpers/helpers";
 
 class BoxShadow extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  // componentDidMount() {
+  //   console.log(this.props);
+  // }
 
   inputChangeHandler = (e, identifier) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     const {
       updtBoxShadowOffsetY,

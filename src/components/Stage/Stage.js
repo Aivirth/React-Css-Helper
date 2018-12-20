@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Actor from "./Actor/Actor";
 import Spectator from "./Spectator/Spectator";
+import { hexToRgb, rawHexToRgba } from "../../helpers/helpers";
 
 class Stage extends Component {
   state = {
@@ -50,7 +51,10 @@ class Stage extends Component {
     }; 
     box-shadow: ${boxShadow.offsetY}px ${boxShadow.offsetX}px ${
       boxShadow.blur
-    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset};    
+    }px ${boxShadow.spread}px ${rawHexToRgba(
+      hexToRgb(boxShadow.color),
+      boxShadow.opacity
+    )} ${boxShadowInset};    
     
     border-top-right-radius: ${borderRadius.topRight.radiusX}px ${
       borderRadius.topRight.radiusY
@@ -102,7 +106,10 @@ class Stage extends Component {
       //TODO: color needs to be converted into rgba and combined with opacity
       boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
         boxShadow.blur
-      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset}`,
+      }px ${boxShadow.spread}px ${rawHexToRgba(
+        hexToRgb(boxShadow.color),
+        boxShadow.opacity
+      )} ${boxShadowInset}`,
 
       borderTopRightRadius: `${borderRadius.topRight.radiusX}px ${
         borderRadius.topRight.radiusY

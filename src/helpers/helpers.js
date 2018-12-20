@@ -27,6 +27,11 @@ export const hexToRgb = hex => {
   return r;
 };
 
+export const rawHexToRgba = (rgbaArr, opacity = 1) => {
+  const rgba = rgbaArr.concat(opacity).join(", ");
+  return `rgba(${rgba})`;
+};
+
 export const convertStringToBoolean = value => {
   if (value && typeof value === "string") {
     if (value.toLowerCase() === "true") return true;

@@ -4,7 +4,7 @@ import uuid from "uuid/v4";
 const initialState = {
   topLeft: {
     radiusX: {
-      value: 50,
+      value: 100,
       inputType: "range",
       elementConfig: {
         label: "Border Top-Left Radius X"
@@ -41,7 +41,7 @@ const initialState = {
 
   topRight: {
     radiusX: {
-      value: 50,
+      value: 25,
       inputType: "range",
       elementConfig: {
         label: "Border Top-Right Radius X"
@@ -58,7 +58,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 20,
+      value: 85,
       inputType: "range",
       elementConfig: {
         label: "Border Top-Right Radius Y"
@@ -95,7 +95,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 20,
+      value: 10,
       inputType: "range",
       elementConfig: {
         label: "Border Bottom-Right Radius Y"

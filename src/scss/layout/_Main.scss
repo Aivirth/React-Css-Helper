@@ -10,5 +10,11 @@
         flex: 0 0 100%;
       }
     }
+
+    &:nth-child(2) {
+      @include respond(tab-port) {
+        order: -1;
+      }
+    }
   }
 }
