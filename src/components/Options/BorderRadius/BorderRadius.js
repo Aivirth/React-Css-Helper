@@ -4,13 +4,66 @@ import Input from "../../UI/Input";
 import Accordion from "../../UI/Accordion/Accordion";
 import AccordtionItem from "../../UI/Accordion/AccordionItem/AccordionItem";
 
+import {
+  updtBorderRadiusBottomLeft,
+  updtBorderRadiusBottomRight,
+  updtBorderRadiusTopLeft,
+  updtBorderRadiusTopRight
+} from "../../../store/actions/borderRadiusActions";
+
 class BorderRadius extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  // componentDidMount() {
+  //   console.log(this.props);
+  // }
 
   inputChangeHandler = (e, identifier) => {
-    console.log(e.target.value);
+    const {
+      updtBorderRadiusBottomLeft,
+      updtBorderRadiusBottomRight,
+      updtBorderRadiusTopLeft,
+      updtBorderRadiusTopRight
+    } = this.props;
+
+    const storeCopy = {
+      ...this.props.stylesFromState
+    };
+
+    const propertyCopy = {
+      ...storeCopy[identifier]
+    };
+
+    const subPropertyCopy = {
+      ...propertyCopy[e.target.dataset.radius]
+    };
+
+    if (subPropertyCopy.inputType === "range") {
+      subPropertyCopy.value = +e.target.value;
+    } else {
+      subPropertyCopy.value = e.target.value;
+    }
+
+    propertyCopy[e.target.dataset.radius] = subPropertyCopy;
+
+    switch (identifier) {
+      case "topLeft":
+        updtBorderRadiusTopLeft(propertyCopy);
+        break;
+
+      case "topRight":
+        updtBorderRadiusTopRight(propertyCopy);
+        break;
+
+      case "bottomLeft":
+        updtBorderRadiusBottomLeft(propertyCopy);
+        break;
+
+      case "bottomRight":
+        updtBorderRadiusBottomRight(propertyCopy);
+        break;
+
+      default:
+        return null;
+    }
   };
 
   render() {
@@ -36,8 +89,8 @@ class BorderRadius extends Component {
       formattedData.push(newArrFormat);
     });
 
-    console.log(radiiArray);
-    console.log("BorderRadius:", formattedData);
+    // console.log(radiiArray);
+    // console.log("BorderRadius:", formattedData);
 
     return (
       <React.Fragment>
@@ -89,4 +142,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(BorderRadius);
+export default connect(
+  mapStateToProps,
+  {
+    updtBorderRadiusBottomLeft,
+    updtBorderRadiusBottomRight,
+    updtBorderRadiusTopLeft,
+    updtBorderRadiusTopRight
+  }
+)(BorderRadius);

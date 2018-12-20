@@ -157,16 +157,16 @@ const reducer = (state = initialState, action) => {
       return { ...state };
 
     case actionTypes.UPDT_BORDERRADIUS_TOPLEFT:
-      return { ...state, borderTopLeftRadius: action.payload };
+      return { ...state, topLeft: action.payload };
 
     case actionTypes.UPDT_BORDERRADIUS_TOPRIGHT:
-      return { ...state, borderTopRightRadius: action.payload };
+      return { ...state, topRight: action.payload };
 
     case actionTypes.UPDT_BORDERRADIUS_BOTTOMRIGHT:
-      return { ...state, borderBottomRightRadius: action.payload };
+      return { ...state, bottomRight: action.payload };
 
     case actionTypes.UPDT_BORDERRADIUS_BOTTOMLEFT:
-      return { ...state, borderBottomLeftRadius: action.payload };
+      return { ...state, bottomLeft: action.payload };
 
     default:
       return state;
