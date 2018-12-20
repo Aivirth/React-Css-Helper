@@ -3,11 +3,12 @@ import uuid from "uuid/v4";
 
 const initialState = {
   topLeft: {
+    name: "Top Left",
     radiusX: {
       value: 100,
       inputType: "range",
       elementConfig: {
-        label: "Border Top-Left Radius X"
+        label: "Radius X"
       },
       htmlProperties: {
         type: "range",
@@ -24,7 +25,7 @@ const initialState = {
       value: 20,
       inputType: "range",
       elementConfig: {
-        label: "Border Top-Left Radius Y"
+        label: "Radius Y"
       },
       htmlProperties: {
         type: "range",
@@ -40,11 +41,12 @@ const initialState = {
   },
 
   topRight: {
+    name: "Top Right",
     radiusX: {
       value: 25,
       inputType: "range",
       elementConfig: {
-        label: "Border Top-Right Radius X"
+        label: "Radius X"
       },
       htmlProperties: {
         type: "range",
@@ -61,7 +63,7 @@ const initialState = {
       value: 85,
       inputType: "range",
       elementConfig: {
-        label: "Border Top-Right Radius Y"
+        label: "Radius Y"
       },
       htmlProperties: {
         type: "range",
@@ -77,11 +79,12 @@ const initialState = {
   },
 
   bottomRight: {
+    name: "Bottom Right",
     radiusX: {
       value: 50,
       inputType: "range",
       elementConfig: {
-        label: "Border Bottom-Right Radius X"
+        label: "Radius X"
       },
       htmlProperties: {
         type: "range",
@@ -98,7 +101,7 @@ const initialState = {
       value: 10,
       inputType: "range",
       elementConfig: {
-        label: "Border Bottom-Right Radius Y"
+        label: "Radius Y"
       },
       htmlProperties: {
         type: "range",
@@ -114,11 +117,12 @@ const initialState = {
   },
 
   bottomLeft: {
+    name: "Bottom Left",
     radiusX: {
       value: 50,
       inputType: "range",
       elementConfig: {
-        label: "Border Bottom-Left Radius X"
+        label: "Radius X"
       },
       htmlProperties: {
         type: "range",
@@ -135,7 +139,7 @@ const initialState = {
       value: 20,
       inputType: "range",
       elementConfig: {
-        label: "Border Bottom-Left Radius Y"
+        label: "Radius Y"
       },
       htmlProperties: {
         type: "range",

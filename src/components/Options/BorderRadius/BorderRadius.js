@@ -83,6 +83,7 @@ class BorderRadius extends Component {
     radiiArray.forEach(radius => {
       const newArrFormat = {
         id: radius.id,
+        name: radius.config.name,
         radii: [radius.config.radiusX, radius.config.radiusY]
       };
 
@@ -99,7 +100,7 @@ class BorderRadius extends Component {
         <Accordion>
           {formattedData.map(radius => {
             return (
-              <AccordtionItem key={radius.id} tabTitle={radius.id}>
+              <AccordtionItem key={radius.id} tabTitle={radius.name}>
                 {radius.radii.map(property => {
                   const {
                     htmlProperties,

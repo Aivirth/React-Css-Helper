@@ -83,6 +83,7 @@ class Borders extends Component {
     propertiesArray.forEach(property => {
       const newArrFormat = {
         id: property.id,
+        name: property.config.name,
         properties: [
           property.config.style,
           property.config.color,
@@ -103,7 +104,7 @@ class Borders extends Component {
         <Accordion>
           {formattedData.map(border => {
             return (
-              <AccordtionItem key={border.id} tabTitle={border.id}>
+              <AccordtionItem key={border.id} tabTitle={border.name}>
                 {border.properties.map(property => {
                   const {
                     htmlProperties,

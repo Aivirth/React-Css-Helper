@@ -8,7 +8,7 @@ const initialState = {
       value: 1,
       inputType: "range",
       elementConfig: {
-        label: "Border Width"
+        label: "Width"
       },
       htmlProperties: {
         type: "range",
@@ -25,7 +25,7 @@ const initialState = {
       value: "solid",
       inputType: "select",
       elementConfig: {
-        label: "Border Style",
+        label: "Style",
         options: [
           { name: "Solid", value: "solid" },
           { name: "None", value: "none" },
@@ -50,7 +50,7 @@ const initialState = {
       value: "#ffb900",
       inputType: "color",
       elementConfig: {
-        label: "Border Color"
+        label: "Color"
       },
       htmlProperties: {
         name: `borderColor-${uuid()}`,
@@ -68,7 +68,7 @@ const initialState = {
       value: 1,
       inputType: "range",
       elementConfig: {
-        label: "Border Width"
+        label: "Width"
       },
       htmlProperties: {
         type: "range",
@@ -85,7 +85,7 @@ const initialState = {
       value: "solid",
       inputType: "select",
       elementConfig: {
-        label: "Border Style",
+        label: "Style",
         options: [
           { name: "Solid", value: "solid" },
           { name: "None", value: "none" },
@@ -110,7 +110,7 @@ const initialState = {
       value: "#ffb900",
       inputType: "color",
       elementConfig: {
-        label: "Border Color"
+        label: "Color"
       },
       htmlProperties: {
         name: `borderColor-${uuid()}`,
@@ -127,7 +127,7 @@ const initialState = {
       value: 1,
       inputType: "range",
       elementConfig: {
-        label: "Border Width"
+        label: "Width"
       },
       htmlProperties: {
         type: "range",
@@ -144,7 +144,7 @@ const initialState = {
       value: "solid",
       inputType: "select",
       elementConfig: {
-        label: "Border Style",
+        label: "Style",
         options: [
           { name: "Solid", value: "solid" },
           { name: "None", value: "none" },
@@ -169,7 +169,7 @@ const initialState = {
       value: "#ffb900",
       inputType: "color",
       elementConfig: {
-        label: "Border Color"
+        label: "Color"
       },
       htmlProperties: {
         name: `borderColor-${uuid()}`,
@@ -186,7 +186,7 @@ const initialState = {
       value: 1,
       inputType: "range",
       elementConfig: {
-        label: "Border Width"
+        label: "Width"
       },
       htmlProperties: {
         type: "range",
@@ -203,7 +203,7 @@ const initialState = {
       value: "solid",
       inputType: "select",
       elementConfig: {
-        label: "Border Style",
+        label: "Style",
         options: [
           { name: "Solid", value: "solid" },
           { name: "None", value: "none" },
@@ -228,7 +228,7 @@ const initialState = {
       value: "#ffb900",
       inputType: "color",
       elementConfig: {
-        label: "Border Color"
+        label: "Color"
       },
       htmlProperties: {
         name: `borderColor-${uuid()}`,
