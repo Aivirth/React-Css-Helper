@@ -22,7 +22,12 @@ class Stage extends Component {
   var;
 
   formatSpectatorDataFromStore = () => {
-    const { base, borders, boxShadow } = this.props.computedStylesFromState;
+    const {
+      base,
+      borders,
+      boxShadow,
+      borderRadius
+    } = this.props.computedStylesFromState;
 
     const boxShadowInset = boxShadow.inset ? "inset" : "";
 
@@ -45,11 +50,33 @@ class Stage extends Component {
     }; 
     box-shadow: ${boxShadow.offsetY}px ${boxShadow.offsetX}px ${
       boxShadow.blur
-    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset};`;
+    }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset};    
+    
+    border-top-right-radius: ${borderRadius.topRight.radiusX}px ${
+      borderRadius.topRight.radiusY
+    }px;
+
+    border-top-left-radius: ${borderRadius.topLeft.radiusX}px ${
+      borderRadius.topLeft.radiusY
+    }px;
+
+    border-bottom-left-radius: ${borderRadius.bottomLeft.radiusX}px ${
+      borderRadius.bottomLeft.radiusY
+    }px;
+
+    border-bottom-right-radius: ${borderRadius.topRight.radiusX}px ${
+      borderRadius.topRight.radiusY
+    }px;
+     `;
   };
 
   formatActorStylesFromStore = () => {
-    const { base, borders, boxShadow } = this.props.computedStylesFromState;
+    const {
+      base,
+      borders,
+      boxShadow,
+      borderRadius
+    } = this.props.computedStylesFromState;
 
     const boxShadowInset = boxShadow.inset ? "inset" : "";
 
@@ -75,7 +102,23 @@ class Stage extends Component {
       //TODO: color needs to be converted into rgba and combined with opacity
       boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
         boxShadow.blur
-      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset}`
+      }px ${boxShadow.spread}px ${boxShadow.color} ${boxShadowInset}`,
+
+      borderTopRightRadius: `${borderRadius.topRight.radiusX}px ${
+        borderRadius.topRight.radiusY
+      }px`,
+
+      borderTopLeftRadius: `${borderRadius.topLeft.radiusX}px ${
+        borderRadius.topLeft.radiusY
+      }px`,
+
+      borderBottomLeftRadius: `${borderRadius.bottomLeft.radiusX}px ${
+        borderRadius.bottomLeft.radiusY
+      }px`,
+
+      borderBottomRightRadius: `${borderRadius.topRight.radiusX}px ${
+        borderRadius.topRight.radiusY
+      }px`
     };
   };
 
@@ -164,6 +207,24 @@ const mapStateToProps = state => {
         color: state.boxShadow.color.value,
         opacity: state.boxShadow.opacity.value,
         inset: state.boxShadow.inset.value
+      },
+      borderRadius: {
+        topLeft: {
+          radiusX: state.borderRadius.borderTopLeftRadius.radii.radiusX,
+          radiusY: state.borderRadius.borderTopLeftRadius.radii.radiusY
+        },
+        topRight: {
+          radiusX: state.borderRadius.borderTopRightRadius.radii.radiusX,
+          radiusY: state.borderRadius.borderTopRightRadius.radii.radiusY
+        },
+        bottomLeft: {
+          radiusX: state.borderRadius.borderBottomLeftRadius.radii.radiusX,
+          radiusY: state.borderRadius.borderBottomLeftRadius.radii.radiusY
+        },
+        bottomRight: {
+          radiusX: state.borderRadius.borderBottomRightRadius.radii.radiusX,
+          radiusY: state.borderRadius.borderBottomRightRadius.radii.radiusY
+        }
       }
     }
   };

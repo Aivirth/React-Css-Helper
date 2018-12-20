@@ -35,7 +35,7 @@ export const UPDT_BORDERBOTTOM = "UPDT_BORDERBOTTOM";
 export const UPDT_BORDERRIGHT = "UPDT_BORDERRIGHT";
 export const UPDT_BORDERLEFT = "UPDT_BORDERLEFT";
 
-// Test
-export const UPDT_RANGE = "UPDT_RANGE";
-export const UPDT_COLORPICKER = "UPDT_COLORPICKER";
-export const UPDT_CHECKBOX = "UPDT_CHECKBOX";
+// // Test
+// export const UPDT_RANGE = "UPDT_RANGE";
+// export const UPDT_COLORPICKER = "UPDT_COLORPICKER";
+// export const UPDT_CHECKBOX = "UPDT_CHECKBOX";
