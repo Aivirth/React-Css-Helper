@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import baseReducer from "./store/reducers/baseReducer";
 import boxShadowReducer from "./store/reducers/boxShadowReducer";
 import borderReducer from "./store/reducers/borderReducer";
+import borderRadiusReducer from "./store/reducers/borderRadiusReducer";
 
 import "./scss/main.scss";
 import App from "./App";
@@ -18,7 +19,8 @@ const composeEnhancers =
 const rootReducer = combineReducers({
   base: baseReducer,
   boxShadow: boxShadowReducer,
-  borders: borderReducer
+  borders: borderReducer,
+  borderRadius: borderRadiusReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers());
