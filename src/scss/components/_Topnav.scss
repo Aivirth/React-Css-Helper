@@ -31,6 +31,7 @@
   &__link {
     cursor: pointer;
     padding: 2rem;
+    transition: $transition-base-01;
 
     &:hover {
       background: rgba(0, 0, 0, 0.5);

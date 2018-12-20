@@ -16,3 +16,6 @@ $switch-before-relative-size: 70;
 $switch-before-size: ((($switch-height * $switch-before-relative-size) / 100));
 $switch-before-spacing: ($switch-height - $switch-before-size) / 2;
 $switch-width: ($switch-before-size + $switch-before-spacing) * 2;
+
+//Transitions
+$transition-base-01: all 0.3s ease;

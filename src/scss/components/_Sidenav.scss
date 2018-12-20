@@ -21,6 +21,8 @@
     cursor: pointer;
     text-decoration: none;
 
+    transition: $transition-base-01;
+
     &:hover {
       color: $pattens-blue;
       background: rgba(0, 0, 0, 0.25);
