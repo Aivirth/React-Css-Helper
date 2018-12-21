@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import NavItem from "../../components/Navbar/NavItem/NavItem";
 import { NavLink as Link } from "react-router-dom";
 
 export default function Sidenav() {

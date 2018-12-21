@@ -27,7 +27,7 @@ export const hexToRgb = hex => {
   return r;
 };
 
-export const rawHexToRgba = (rgbaArr, opacity = 1) => {
+export const rawHexToRgba = (rgbaArr = isRequired(), opacity = 1) => {
   const rgba = rgbaArr.concat(opacity).join(", ");
   return `rgba(${rgba})`;
 };
