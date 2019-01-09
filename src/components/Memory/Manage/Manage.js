@@ -4,16 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUndoAlt,
   faTimesCircle,
-  faFileDownload,
-  faInfoCircle
+  faFileDownload
 } from "@fortawesome/free-solid-svg-icons";
 
 export default class Manage extends Component {
   state = {
-    snapShots: null
+    snapShots: []
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.loadLocalStorage();
   }
 
@@ -21,9 +20,24 @@ export default class Manage extends Component {
     const data = localStorage.getItem("aivirth-css-helper-snaps");
     if (data) {
       this.setState({
-        snapShots: JSON.parse(data)
+        snapShots: this.state.snapShots.concat(JSON.parse(data))
       });
     }
+  };
+
+  deleteSnapshotItem = (e, id) => {
+    e.preventDefault();
+    const snapShotsCopy = [...this.state.snapShots];
+    const updatedSnapshotsList = snapShotsCopy.filter(snap => snap.id !== id);
+
+    localStorage.setItem(
+      "aivirth-css-helper-snaps",
+      JSON.stringify(updatedSnapshotsList)
+    );
+
+    this.setState({
+      snapShots: updatedSnapshotsList
+    });
   };
 
   render() {
@@ -44,14 +58,14 @@ export default class Manage extends Component {
               <button className="Snapshots__btn Snapshots__btn--load">
                 <FontAwesomeIcon icon={faUndoAlt} />
               </button>
-              <button className="Snapshots__btn Snapshots__btn--delete">
-                <FontAwesomeIcon icon={faTimesCircle} />
-              </button>
-              <button className="Snapshots__btn Snapshots__btn--info">
-                <FontAwesomeIcon icon={faInfoCircle} />
-              </button>
               <button className="Snapshots__btn Snapshots__btn--download">
                 <FontAwesomeIcon icon={faFileDownload} />
+              </button>
+              <button
+                className="Snapshots__btn Snapshots__btn--delete"
+                onClick={e => this.deleteSnapshotItem(e, snap.id)}
+              >
+                <FontAwesomeIcon icon={faTimesCircle} />
               </button>
             </div>
           </li>
