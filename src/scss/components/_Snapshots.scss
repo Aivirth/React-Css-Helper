@@ -21,6 +21,7 @@
   &__date {
   }
   &__id {
+    color: #484848;
   }
   &__actions {
     display: flex;
@@ -42,9 +43,7 @@
     &--delete {
       background: red;
     }
-    &--info {
-      background: aqua;
-    }
+
     &--download {
       background: orange;
     }

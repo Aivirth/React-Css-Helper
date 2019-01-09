@@ -4,6 +4,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavItem from "../../components/Navbar/NavItem/NavItem";
 import Save from "../../components/Memory/Save/Save";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+
 export default function Topnav() {
   return (
     <div className="Topnav">
@@ -16,7 +19,7 @@ export default function Topnav() {
               className="Topnav__link"
               activeClassName="Topnav__link--active"
             >
-              Manage
+              <FontAwesomeIcon icon={faDatabase} />
             </Link>
           </NavItem>
 

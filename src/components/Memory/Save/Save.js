@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { createTimeStamp } from "../../../helpers/helpers";
 import uuid from "uuid/v4";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSave } from "@fortawesome/free-solid-svg-icons";
+
 class Save extends Component {
   componentDidMount() {
     console.log(this.props);
@@ -35,7 +38,7 @@ class Save extends Component {
         className={`${cssClasses} saveToLS`}
         onClick={this.saveCurrentStateToLocalStorage}
       >
-        Save
+        <FontAwesomeIcon icon={faSave} />
       </button>
     );
   }
