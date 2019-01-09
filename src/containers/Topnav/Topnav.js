@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import NavItem from "../../components/Navbar/NavItem/NavItem";
+import Save from "../../components/Memory/Save/Save";
 
 export default function Topnav() {
   return (
@@ -18,7 +19,7 @@ export default function Topnav() {
             <a className="Topnav__link">Lorem</a>
           </NavItem>
           <NavItem cssClasses="Topnav__item">
-            <a className="Topnav__link">Lorem</a>
+            <Save cssClasses="Topnav__link" />
           </NavItem>
         </Navbar>
       </div>
