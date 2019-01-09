@@ -4,34 +4,43 @@
   flex-direction: column;
   min-height: calc(100vh - 6.5rem);
   flex: 0 0 $sidenav-width;
+  position: relative;
 
-  // &--mobile {
-  //   width: $sidenav-width;
-  //   transform: translateX(-$sidenav-width);
-  //   position: fixed;
-  //   min-height: 100vh;
-  //   top: 0;
-  //   left: 0;
-  //   position: relative;
-
-  //   &.isOpen {
-  //     transform: translateX(0);
-  //   }
-  // }
-
-  // &__toggle {
-  //   width: 3rem;
-  //   height: 3rem;
-  //   display: flex;
-  //   align-content: center;
-  //   justify-content: center;
-  //   position: absolute;
-  // }
+  transition: transform 0.3s ease;
 
   @include respond(tab-port) {
-    min-height: auto;
-    display: block;
-    flex: 0 0 100%;
+    transform: translateX(-100%);
+    position: absolute;
+    width: 35rem;
+    margin-top: 6.5rem;
+    z-index: 999;
+  }
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__toggler {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 0;
+    right: 0;
+    background: red;
+    transform: translateX(100%);
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    vertical-align: middle;
+    cursor: pointer;
+    visibility: hidden;
+    display: flex;
+    transition: all 0.3s ease;
+    @include respond(tab-port) {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__nav {
@@ -40,17 +49,6 @@
     padding: 0;
     padding-bottom: 2rem;
     border-bottom: 1px solid #444b58;
-
-    @include respond(tab-port) {
-      padding-bottom: 0;
-      display: flex;
-    }
-  }
-
-  &__item {
-    @include respond(tab-port) {
-      flex: 1;
-    }
   }
 
   &__link {
@@ -80,21 +78,6 @@
         position: absolute;
         background: $malibu;
         height: 100%;
-      }
-    }
-  }
-
-  @include respond(tab-port) {
-    &__link {
-      &--active {
-        &:before {
-          content: "";
-          width: 100%;
-          height: 0.5rem;
-
-          position: absolute;
-          background: $malibu;
-        }
       }
     }
   }
