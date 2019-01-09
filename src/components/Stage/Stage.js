@@ -68,8 +68,8 @@ class Stage extends Component {
       borderRadius.bottomLeft.radiusY
     }px;
 
-    border-bottom-right-radius: ${borderRadius.topRight.radiusX}px ${
-      borderRadius.topRight.radiusY
+    border-bottom-right-radius: ${borderRadius.bottomRight.radiusX}px ${
+      borderRadius.bottomRight.radiusY
     }px;
     `;
   };
@@ -123,8 +123,8 @@ class Stage extends Component {
         borderRadius.bottomLeft.radiusY
       }px`,
 
-      borderBottomRightRadius: `${borderRadius.topRight.radiusX}px ${
-        borderRadius.topRight.radiusY
+      borderBottomRightRadius: `${borderRadius.bottomRight.radiusX}px ${
+        borderRadius.bottomRight.radiusY
       }px`
     };
   };
