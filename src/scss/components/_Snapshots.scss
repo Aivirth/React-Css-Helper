@@ -1,0 +1,42 @@
+.Snapshots {
+  &__title {
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    text-align: left;
+    display: flex;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    box-shadow: 0px 1px 1px 0px rgb(208, 208, 208);
+    padding: 1.5rem;
+  }
+  &__details {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+  &__date {
+  }
+  &__id {
+  }
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+  }
+
+  &__btn {
+    color: $azure;
+    padding: 1rem 1.1rem;
+    font-size: 1.3rem;
+    &--load {
+      background: green;
+    }
+    &--delete {
+      background: red;
+    }
+  }
+}

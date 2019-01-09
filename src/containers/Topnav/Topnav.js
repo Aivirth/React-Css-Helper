@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink as Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import NavItem from "../../components/Navbar/NavItem/NavItem";
 import Save from "../../components/Memory/Save/Save";
@@ -10,14 +11,15 @@ export default function Topnav() {
         <div className="Topnav__title">React CSS Helper</div>
         <Navbar cssClasses="Topnav__list">
           <NavItem cssClasses="Topnav__item">
-            <a className="Topnav__link">Lorem</a>
+            <Link
+              to="/manage"
+              className="Topnav__link"
+              activeClassName="Topnav__link--active"
+            >
+              Manage
+            </Link>
           </NavItem>
-          <NavItem cssClasses="Topnav__item">
-            <a className="Topnav__link">Lorem</a>
-          </NavItem>
-          <NavItem cssClasses="Topnav__item">
-            <a className="Topnav__link">Lorem</a>
-          </NavItem>
+
           <NavItem cssClasses="Topnav__item">
             <Save cssClasses="Topnav__link" />
           </NavItem>
