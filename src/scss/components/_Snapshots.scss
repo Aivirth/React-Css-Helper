@@ -30,13 +30,23 @@
 
   &__btn {
     color: $azure;
-    padding: 1rem 1.1rem;
-    font-size: 1.3rem;
+    flex: 1;
+    height: 4rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &--load {
       background: green;
     }
     &--delete {
       background: red;
+    }
+    &--info {
+      background: aqua;
+    }
+    &--download {
+      background: orange;
     }
   }
 }

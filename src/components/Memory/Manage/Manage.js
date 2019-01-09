@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUndoAlt, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUndoAlt,
+  faTimesCircle,
+  faFileDownload,
+  faInfoCircle
+} from "@fortawesome/free-solid-svg-icons";
 
 export default class Manage extends Component {
   state = {
@@ -41,6 +46,12 @@ export default class Manage extends Component {
               </button>
               <button className="Snapshots__btn Snapshots__btn--delete">
                 <FontAwesomeIcon icon={faTimesCircle} />
+              </button>
+              <button className="Snapshots__btn Snapshots__btn--info">
+                <FontAwesomeIcon icon={faInfoCircle} />
+              </button>
+              <button className="Snapshots__btn Snapshots__btn--download">
+                <FontAwesomeIcon icon={faFileDownload} />
               </button>
             </div>
           </li>
