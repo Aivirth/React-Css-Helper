@@ -17,8 +17,7 @@ class Sidenav extends Component {
 
   toggleSidenavStatus = e => {
     e.preventDefault();
-
-    if (window.innerWidth <= 900) {
+    if (window.matchMedia("only screen and (max-width: 56.25em)").matches) {
       this.setState({
         isOpen: !this.state.isOpen
       });
