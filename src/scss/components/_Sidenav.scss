@@ -26,7 +26,8 @@
     height: 5rem;
     top: 0;
     right: 0;
-    background: red;
+    background: $malibu;
+    color: $azure;
     transform: translateX(100%);
     opacity: 0;
     align-items: center;
@@ -40,6 +41,10 @@
     @include respond(tab-port) {
       opacity: 1;
       visibility: visible;
+    }
+
+    &:hover {
+      background: $blue-2;
     }
   }
 
