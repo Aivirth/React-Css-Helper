@@ -10,6 +10,16 @@
     flex: 0 0 35rem;
   }
 
+  &__action {
+    padding: 2rem 2.555rem;
+    color: $azure;
+    background: none;
+  }
+
+  button {
+    background: #265036;
+  }
+
   &__logo {
     background-color: $blue-charcoal;
 

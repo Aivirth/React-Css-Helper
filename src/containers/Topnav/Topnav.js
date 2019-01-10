@@ -16,7 +16,7 @@ export default function Topnav() {
           <NavItem cssClasses="Topnav__item">
             <Link
               to="/manage"
-              className="Topnav__link"
+              className="Topnav__link Topnav__action"
               activeClassName="Topnav__link--active"
             >
               <FontAwesomeIcon icon={faDatabase} />
@@ -24,7 +24,7 @@ export default function Topnav() {
           </NavItem>
 
           <NavItem cssClasses="Topnav__item">
-            <Save cssClasses="Topnav__link" />
+            <Save cssClasses="Topnav__link Topnav__action" />
           </NavItem>
         </Navbar>
       </div>

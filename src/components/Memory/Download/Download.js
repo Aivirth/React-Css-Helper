@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 export default function Download(props) {
-  // var data = { x: 42, s: "hello, world", d: new Date() },
-  //     fileName = "my-download.json";
-
   const createJsonFile = (e, data, fileName) => {
     e.preventDefault();
     const a = document.createElement("a");
