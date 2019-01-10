@@ -75,7 +75,7 @@ export default class Manage extends Component {
     return (
       <div className="Snapshots">
         <h2 className="Inputs__title Snapshots__title">Manage Snapshots</h2>
-        <ul className="Snapshots__list">{listOutput}</ul>
+        <ul className="Snapshots__list">{listOutput.reverse()}</ul>
       </div>
     );
   }
