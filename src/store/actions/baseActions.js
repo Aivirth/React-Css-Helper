@@ -33,3 +33,10 @@ export const updtBaseBgColor = payload => {
     payload: payload
   };
 };
+
+export const restoreBase = payload => {
+  return {
+    type: actionTypes.RESTORE_BASE,
+    payload: payload
+  };
+};

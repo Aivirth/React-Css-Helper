@@ -27,3 +27,10 @@ export const updtBorderRadiusBottomRight = payload => {
     payload: payload
   };
 };
+
+export const restoreBorderRadius = payload => {
+  return {
+    type: actionTypes.RESTORE_BORDERRADIUS,
+    payload: payload
+  };
+};

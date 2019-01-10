@@ -27,3 +27,10 @@ export const updtBorderLeft = payload => {
     payload: payload
   };
 };
+
+export const restoreBorder = payload => {
+  return {
+    type: actionTypes.RESTORE_BORDER,
+    payload: payload
+  };
+};

@@ -10,12 +10,6 @@
     flex: 0 0 35rem;
   }
 
-  &__action {
-    padding: 2rem 2.555rem;
-    color: $azure;
-    background: none;
-  }
-
   button {
     background: #265036;
   }
@@ -47,6 +41,12 @@
     &:hover {
       background: rgba(0, 0, 0, 0.5);
     }
+  }
+
+  &__action {
+    padding: 2rem 2.555rem;
+    color: $azure;
+    background: none;
   }
 
   &__title,

@@ -48,3 +48,10 @@ export const updtBoxShadowInset = payload => {
     payload: payload
   };
 };
+
+export const restoreBoxShadow = payload => {
+  return {
+    type: actionTypes.RESTORE_BOXSHADOW,
+    payload: payload
+  };
+};
