@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-
+import Download from "../Download/Download";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUndoAlt,
-  faTimesCircle,
-  faFileDownload
-} from "@fortawesome/free-solid-svg-icons";
+import { faUndoAlt, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default class Manage extends Component {
   state = {
@@ -58,9 +54,10 @@ export default class Manage extends Component {
               <button className="Snapshots__btn Snapshots__btn--load">
                 <FontAwesomeIcon icon={faUndoAlt} />
               </button>
-              <button className="Snapshots__btn Snapshots__btn--download">
-                <FontAwesomeIcon icon={faFileDownload} />
-              </button>
+              <Download
+                data={JSON.stringify(snap)}
+                fileName={`${snap.id}.json`}
+              />
               <button
                 className="Snapshots__btn Snapshots__btn--delete"
                 onClick={e => this.deleteSnapshotItem(e, snap.id)}
