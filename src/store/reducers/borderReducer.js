@@ -258,6 +258,15 @@ const reducer = (state = initialState, action) => {
     case actionTypes.UPDT_BORDERLEFT:
       return { ...state, left: action.payload };
 
+    case actionTypes.RESTORE_BORDER:
+      return {
+        ...state,
+        top: action.payload.top,
+        bottom: action.payload.bottom,
+        left: action.payload.left,
+        right: action.payload.right
+      };
+
     default:
       return state;
   }

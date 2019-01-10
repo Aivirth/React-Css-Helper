@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Download from "../Download/Download";
+import Restore from "../Restore/Restore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUndoAlt, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default class Manage extends Component {
   state = {
@@ -51,9 +52,8 @@ export default class Manage extends Component {
               </p>
             </div>
             <div className="Snapshots__actions">
-              <button className="Snapshots__btn Snapshots__btn--load">
-                <FontAwesomeIcon icon={faUndoAlt} />
-              </button>
+              <Restore snapId={snap.id} snapData={snapData} />
+
               <Download
                 data={JSON.stringify(snap)}
                 fileName={`${snap.id}.json`}

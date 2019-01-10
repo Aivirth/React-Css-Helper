@@ -131,6 +131,18 @@ const reducer = (state = initialState, action) => {
     case actionTypes.UPDT_BOXSHADOWINSET:
       return { ...state, inset: action.payload };
 
+    case actionTypes.RESTORE_BOXSHADOW:
+      return {
+        ...state,
+        offsetY: action.payload.offsetY,
+        offsetX: action.payload.offsetX,
+        blur: action.payload.blur,
+        spread: action.payload.spread,
+        color: action.payload.color,
+        opacity: action.payload.opacity,
+        inset: action.payload.inset
+      };
+
     default:
       return state;
   }

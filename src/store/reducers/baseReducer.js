@@ -69,6 +69,15 @@ const reducer = (state = initialState, action) => {
     case actionTypes.UPDT_BASEBGCOLOR:
       return { ...state, backgroundColor: action.payload };
 
+    case actionTypes.RESTORE_BASE:
+      console.log("restore");
+      return {
+        ...state,
+        width: action.payload.width,
+        height: action.payload.height,
+        backgroundColor: action.payload.backgroundColor
+      };
+
     default:
       return state;
   }

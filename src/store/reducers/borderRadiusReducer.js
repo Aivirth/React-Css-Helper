@@ -172,6 +172,15 @@ const reducer = (state = initialState, action) => {
     case actionTypes.UPDT_BORDERRADIUS_BOTTOMLEFT:
       return { ...state, bottomLeft: action.payload };
 
+    case actionTypes.RESTORE_BORDERRADIUS:
+      return {
+        ...state,
+        bottomRight: action.payload.bottomRight,
+        topRight: action.payload.topRight,
+        bottomLeft: action.payload.bottomLeft,
+        topLeft: action.payload.topLeft
+      };
+
     default:
       return state;
   }

@@ -7,10 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 class Save extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   saveCurrentStateToLocalStorage = e => {
     e.preventDefault();
 

@@ -12,10 +12,6 @@ import {
 } from "../../../store/actions/borderActions";
 
 class Borders extends Component {
-  componentDidMount() {
-    // console.log("Borders:", this.props);
-  }
-
   inputChangeHandler = (e, identifier) => {
     const {
       updtBorderTop,
@@ -93,9 +89,6 @@ class Borders extends Component {
 
       formattedData.push(newArrFormat);
     });
-
-    // console.log(propertiesArray);
-    // console.log("Borders:", formattedData);
 
     return (
       <React.Fragment>
