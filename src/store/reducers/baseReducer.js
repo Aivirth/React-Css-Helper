@@ -3,7 +3,7 @@ import uuid from "uuid/v4";
 
 const initialState = {
   width: {
-    value: 200,
+    value: 250,
     inputType: "range",
     elementConfig: {
       label: "Width"
@@ -18,7 +18,7 @@ const initialState = {
   },
 
   height: {
-    value: 200,
+    value: 250,
     inputType: "range",
     elementConfig: {
       label: "Height"

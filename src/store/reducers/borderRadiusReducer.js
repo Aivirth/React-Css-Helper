@@ -5,7 +5,7 @@ const initialState = {
   topLeft: {
     name: "Top Left",
     radiusX: {
-      value: 100,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius X"
@@ -22,7 +22,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 20,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius Y"
@@ -43,7 +43,7 @@ const initialState = {
   topRight: {
     name: "Top Right",
     radiusX: {
-      value: 25,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius X"
@@ -60,7 +60,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 85,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius Y"
@@ -81,7 +81,7 @@ const initialState = {
   bottomRight: {
     name: "Bottom Right",
     radiusX: {
-      value: 50,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius X"
@@ -98,7 +98,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 10,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius Y"
@@ -119,7 +119,7 @@ const initialState = {
   bottomLeft: {
     name: "Bottom Left",
     radiusX: {
-      value: 50,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius X"
@@ -136,7 +136,7 @@ const initialState = {
       }
     },
     radiusY: {
-      value: 20,
+      value: 0,
       inputType: "range",
       elementConfig: {
         label: "Radius Y"
