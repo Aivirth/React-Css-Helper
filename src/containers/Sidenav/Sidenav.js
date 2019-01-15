@@ -10,7 +10,8 @@ class Sidenav extends Component {
       { url: "/base", anchor: "Base" },
       { url: "/borders", anchor: "Borders" },
       { url: "/border-radius", anchor: "Border Radius" },
-      { url: "/box-shadow", anchor: "Box Shadow" }
+      { url: "/box-shadow", anchor: "Box Shadow" },
+      { url: "/transform", anchor: "Transforms" }
     ],
     isOpen: false
   };
