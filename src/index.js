@@ -6,6 +6,7 @@ import baseReducer from "./store/reducers/baseReducer";
 import boxShadowReducer from "./store/reducers/boxShadowReducer";
 import borderReducer from "./store/reducers/borderReducer";
 import borderRadiusReducer from "./store/reducers/borderRadiusReducer";
+import transformReducer from "./store/reducers/transformReducer";
 
 import "./scss/main.scss";
 import App from "./App";
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   base: baseReducer,
   boxShadow: boxShadowReducer,
   borders: borderReducer,
-  borderRadius: borderRadiusReducer
+  borderRadius: borderRadiusReducer,
+  transform: transformReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers());

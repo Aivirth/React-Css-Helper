@@ -245,3 +245,27 @@ const initialState = {
     }
   }
 };
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.UPDT_TRANSLATE:
+      return { ...state, translate: action.payload };
+
+    case actionTypes.UPDT_ROTATE:
+      return { ...state, rotate: action.payload };
+
+    case actionTypes.UPDT_SKEW:
+      return { ...state, skew: action.payload };
+
+    case actionTypes.UPDT_SCALE:
+      return { ...state, scale: action.payload };
+
+    case actionTypes.UPDT_PERSPECTIVE:
+      return { ...state, perspective: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export default reducer;
