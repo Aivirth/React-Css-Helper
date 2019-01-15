@@ -7,9 +7,8 @@ import {
   withRouter
 } from "react-router-dom";
 
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Topnav from "./containers/Topnav/Topnav";
-import Sidenav from "./containers/Sidenav/Sidenav";
 import Main from "./containers/Layout/Main/Main";
 
 class App extends Component {
@@ -22,7 +21,6 @@ class App extends Component {
           </Switch> */}
           <div className="container d-flex">
             <Topnav />
-            <Sidenav />
             <Main />
           </div>
         </div>

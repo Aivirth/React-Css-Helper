@@ -1,9 +1,9 @@
 .Main {
   flex: 1 0 auto;
-  padding-bottom: 2.5rem;
 
   &__column {
-    flex: 0 0 50%;
+    flex: 1;
+    padding-bottom: 2.5rem;
 
     &:first-child,
     &:nth-child(2) {
