@@ -40,4 +40,5 @@ export const UPDT_BORDERLEFT = "UPDT_BORDERLEFT";
 export const UPDT_TRANSLATE = "UPDT_TRANSLATE";
 export const UPDT_ROTATE = "UPDT_ROTATE";
 export const UPDT_SCALE = "UPDT_SCALE";
+export const UPDT_SKEW = "UPDT_SKEW";
 export const UPDT_PERSPECTIVE = "UPDT_PERSPECTIVE";
