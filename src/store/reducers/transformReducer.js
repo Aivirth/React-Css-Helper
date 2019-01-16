@@ -7,7 +7,7 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate X"
@@ -16,7 +16,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `translateX-${uuid()}`
         },
         dataSets: {
@@ -24,7 +24,7 @@ const initialState = {
         }
       },
       axisY: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate Y"
@@ -33,7 +33,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `translateY-${uuid()}`
         },
         dataSets: {
@@ -41,7 +41,7 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate Z"
@@ -50,7 +50,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `translateZ-${uuid()}`
         },
         dataSets: {
@@ -64,7 +64,7 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate X"
@@ -73,7 +73,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `rotateX-${uuid()}`
         },
         dataSets: {
@@ -81,7 +81,7 @@ const initialState = {
         }
       },
       axisY: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate Y"
@@ -90,7 +90,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `rotateY-${uuid()}`
         },
         dataSets: {
@@ -98,7 +98,7 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate Z"
@@ -107,7 +107,7 @@ const initialState = {
           type: "range",
           step: "1",
           min: 0,
-          max: 20,
+          max: 360,
           name: `rotateZ-${uuid()}`
         },
         dataSets: {
@@ -180,16 +180,16 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Scale X"
         },
         htmlProperties: {
           type: "range",
-          step: "1",
+          step: "0.1",
           min: 0,
-          max: 20,
+          max: 10,
           name: `scaleX-${uuid()}`
         },
         dataSets: {
@@ -197,16 +197,16 @@ const initialState = {
         }
       },
       axisY: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Scale Y"
         },
         htmlProperties: {
           type: "range",
-          step: "1",
+          step: "0.1",
           min: 0,
-          max: 20,
+          max: 10,
           name: `scaleY-${uuid()}`
         },
         dataSets: {
@@ -214,16 +214,16 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Scale Z"
         },
         htmlProperties: {
           type: "range",
-          step: "1",
+          step: "0.1",
           min: 0,
-          max: 20,
+          max: 10,
           name: `scaleZ-${uuid()}`
         },
         dataSets: {
@@ -236,7 +236,7 @@ const initialState = {
   perspective: {
     name: "Perspective",
     isActive: true,
-    value: 10,
+    value: 0,
     inputType: "number",
     elementConfig: {
       label: "Perspective"
@@ -244,8 +244,8 @@ const initialState = {
     htmlProperties: {
       type: "number",
       step: "1",
-      min: -10,
-      max: 20,
+      min: -999,
+      max: 999,
       name: `perspective-${uuid()}`
     },
     dataSets: {
