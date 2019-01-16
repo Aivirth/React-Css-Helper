@@ -20,7 +20,7 @@ const initialState = {
           name: `translateX-${uuid()}`
         },
         dataSets: {
-          "data-target": "translateX"
+          "data-target": "axisX"
         }
       },
       axisY: {
@@ -37,7 +37,7 @@ const initialState = {
           name: `translateY-${uuid()}`
         },
         dataSets: {
-          "data-target": "translateY"
+          "data-target": "axisY"
         }
       },
       axisZ: {
@@ -54,7 +54,7 @@ const initialState = {
           name: `translateZ-${uuid()}`
         },
         dataSets: {
-          "data-target": "translateZ"
+          "data-target": "axisZ"
         }
       }
     }
@@ -77,7 +77,7 @@ const initialState = {
           name: `rotateX-${uuid()}`
         },
         dataSets: {
-          "data-target": "rotateX"
+          "data-target": "axisX"
         }
       },
       axisY: {
@@ -94,7 +94,7 @@ const initialState = {
           name: `rotateY-${uuid()}`
         },
         dataSets: {
-          "data-target": "rotateY"
+          "data-target": "axisY"
         }
       },
       axisZ: {
@@ -111,7 +111,7 @@ const initialState = {
           name: `rotateZ-${uuid()}`
         },
         dataSets: {
-          "data-target": "rotateZ"
+          "data-target": "axisZ"
         }
       }
     }
@@ -135,7 +135,7 @@ const initialState = {
           name: `skewX-${uuid()}`
         },
         dataSets: {
-          "data-target": "skewX"
+          "data-target": "axisX"
         }
       },
       axisY: {
@@ -152,7 +152,7 @@ const initialState = {
           name: `skewY-${uuid()}`
         },
         dataSets: {
-          "data-target": "skewY"
+          "data-target": "axisY"
         }
       },
       axisZ: {
@@ -169,7 +169,7 @@ const initialState = {
           name: `skewZ-${uuid()}`
         },
         dataSets: {
-          "data-target": "skewZ"
+          "data-target": "axisZ"
         }
       }
     }
@@ -193,7 +193,7 @@ const initialState = {
           name: `scaleX-${uuid()}`
         },
         dataSets: {
-          "data-target": "scaleX"
+          "data-target": "axisX"
         }
       },
       axisY: {
@@ -210,7 +210,7 @@ const initialState = {
           name: `scaleY-${uuid()}`
         },
         dataSets: {
-          "data-target": "scaleY"
+          "data-target": "axisY"
         }
       },
       axisZ: {
@@ -227,7 +227,7 @@ const initialState = {
           name: `scaleZ-${uuid()}`
         },
         dataSets: {
-          "data-target": "scaleZ"
+          "data-target": "axisZ"
         }
       }
     }

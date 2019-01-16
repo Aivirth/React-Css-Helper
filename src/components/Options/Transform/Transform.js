@@ -14,9 +14,66 @@ import {
 } from "../../../store/actions/transformActions";
 
 class Transform extends Component {
+  inputChangeHandler = (e, identifier) => {
+    const {
+      updtPerspective,
+      updtRotate,
+      updtScale,
+      updtSkew,
+      updtTranslate
+    } = this.props;
+
+    const storeCopy = {
+      ...this.props.stylesFromState
+    };
+
+    const propertyCopy = {
+      ...storeCopy[identifier]
+    };
+
+    if (propertyCopy.axes) {
+      const subPropertyCopy = {
+        ...propertyCopy.axes[e.target.dataset.target]
+      };
+
+      subPropertyCopy.value = +e.target.value;
+      propertyCopy.axes[e.target.dataset.target] = subPropertyCopy;
+
+      switch (identifier) {
+        case "rotate":
+          updtRotate(propertyCopy);
+          break;
+
+        case "translate":
+          updtTranslate(propertyCopy);
+          break;
+
+        case "skew":
+          updtSkew(propertyCopy);
+          break;
+
+        case "scale":
+          updtScale(propertyCopy);
+          break;
+
+        default:
+          return null;
+      }
+    } else {
+      propertyCopy.value = +e.target.value;
+      switch (identifier) {
+        case "perspective":
+          updtPerspective(propertyCopy);
+          break;
+
+        default:
+          return null;
+      }
+    }
+  };
+
   render() {
     const { stylesFromState } = this.props;
-
     let propertiesArray = [];
 
     for (let key in stylesFromState) {
@@ -27,7 +84,6 @@ class Transform extends Component {
     }
 
     const formattedData = [];
-
     propertiesArray.forEach(property => {
       const axesCopy = { ...property.config.axes };
 
