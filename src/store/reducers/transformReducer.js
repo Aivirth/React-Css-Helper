@@ -239,7 +239,7 @@ const initialState = {
     value: 10,
     inputType: "number",
     elementConfig: {
-      label: "Perspective Z"
+      label: "Perspective"
     },
     htmlProperties: {
       type: "number",
