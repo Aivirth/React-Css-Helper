@@ -15,31 +15,72 @@ class Stage extends Component {
 
   combineTransformProperty = transformObj => {
     const { rotate, translate, scale, perspective, skew } = transformObj;
-
     const computedTransformObj = {};
 
-    computedTransformObj.rotateX = rotate.axisX !== 0 ? rotate.axisX : null;
-    computedTransformObj.rotateY = rotate.axisY !== 0 ? rotate.axisY : null;
-    computedTransformObj.rotateZ = rotate.axisZ !== 0 ? rotate.axisZ : null;
+    computedTransformObj.rotateX =
+      rotate.axisX.value !== 0
+        ? `rotateX(${rotate.axisX.value}${rotate.axisX.measurementUnit})`
+        : null;
+    computedTransformObj.rotateY =
+      rotate.axisY.value !== 0
+        ? `rotateY(${rotate.axisY.value}${rotate.axisY.measurementUnit})`
+        : null;
+    computedTransformObj.rotateZ =
+      rotate.axisZ.value !== 0
+        ? `rotateZ(${rotate.axisZ.value}${rotate.axisZ.measurementUnit})`
+        : null;
 
-    computedTransformObj.skewX = skew.axisX !== 0 ? skew.axisX : null;
-    computedTransformObj.skewY = skew.axisY !== 0 ? skew.axisY : null;
-    computedTransformObj.skewZ = skew.axisZ !== 0 ? skew.axisZ : null;
+    computedTransformObj.scaleX =
+      scale.axisX.value !== 0
+        ? `scaleX(${scale.axisX.value}${scale.axisX.measurementUnit})`
+        : null;
+    computedTransformObj.scaleY =
+      scale.axisY.value !== 0
+        ? `scaleY(${scale.axisY.value}${scale.axisY.measurementUnit})`
+        : null;
+    computedTransformObj.scaleZ =
+      scale.axisZ.value !== 0
+        ? `scaleZ(${scale.axisZ.value}${scale.axisZ.measurementUnit})`
+        : null;
 
     computedTransformObj.translateX =
-      translate.axisX !== 0 ? translate.axisX : null;
+      translate.axisX.value !== 0
+        ? `translateX(${translate.axisX.value}${
+            translate.axisX.measurementUnit
+          })`
+        : null;
     computedTransformObj.translateY =
-      translate.axisY !== 0 ? translate.axisY : null;
+      translate.axisY.value !== 0
+        ? `translateY(${translate.axisY.value}${
+            translate.axisY.measurementUnit
+          })`
+        : null;
     computedTransformObj.translateZ =
-      translate.axisZ !== 0 ? translate.axisZ : null;
+      translate.axisZ.value !== 0
+        ? `translateZ(${translate.axisZ.value}${
+            translate.axisZ.measurementUnit
+          })`
+        : null;
 
-    computedTransformObj.scaleX = scale.axisX !== 0 ? scale.axisX : null;
-    computedTransformObj.scaleY = scale.axisY !== 0 ? scale.axisY : null;
-    computedTransformObj.scaleZ = scale.axisZ !== 0 ? scale.axisZ : null;
+    computedTransformObj.skewX =
+      skew.axisX.value !== 0
+        ? `skewX(${skew.axisX.value}${skew.axisX.measurementUnit})`
+        : null;
+    computedTransformObj.skewY =
+      skew.axisY.value !== 0
+        ? `skewY(${skew.axisY.value}${skew.axisY.measurementUnit})`
+        : null;
 
-    computedTransformObj.perspective = perspective !== 0 ? perspective : null;
+    computedTransformObj.perspective =
+      perspective.value !== 0
+        ? `perspective(${skew.axisZ.value}${skew.axisZ.measurementUnit})`
+        : null;
 
-    console.log(computedTransformObj);
+    const transformString = Object.values(computedTransformObj)
+      .filter(property => property !== null)
+      .join(" ");
+
+    return transformString;
   };
 
   onTabOptionClickHandler = () => {
@@ -55,10 +96,12 @@ class Stage extends Component {
       base,
       borders,
       boxShadow,
-      borderRadius
+      borderRadius,
+      transform
     } = this.props.computedStylesFromState;
 
     const boxShadowInset = boxShadow.inset ? "inset" : "";
+    const transformString = this.combineTransformProperty(transform);
 
     return `
     width: ${base.width}px; 
@@ -99,6 +142,8 @@ class Stage extends Component {
     border-bottom-right-radius: ${borderRadius.bottomRight.radiusX}px ${
       borderRadius.bottomRight.radiusY
     }px;
+
+    transform: ${transformString}
     `;
   };
 
@@ -111,9 +156,8 @@ class Stage extends Component {
       transform
     } = this.props.computedStylesFromState;
 
-    this.combineTransformProperty(transform);
-
     const boxShadowInset = boxShadow.inset ? "inset" : "";
+    const transformString = this.combineTransformProperty(transform);
 
     return {
       width: `${base.width}px`,
@@ -155,7 +199,9 @@ class Stage extends Component {
 
       borderBottomRightRadius: `${borderRadius.bottomRight.radiusX}px ${
         borderRadius.bottomRight.radiusY
-      }px`
+      }px`,
+
+      transform: transformString.length > 0 ? transformString : "none"
     };
   };
 
@@ -265,26 +311,73 @@ const mapStateToProps = state => {
       },
       transform: {
         rotate: {
-          axisX: state.transform.rotate.axes.axisX.value,
-          axisY: state.transform.rotate.axes.axisY.value,
-          axisZ: state.transform.rotate.axes.axisZ.value
+          axisX: {
+            value: state.transform.rotate.axes.axisX.value,
+            measurementUnit:
+              state.transform.rotate.axes.axisX.elementConfig.measurementUnit
+          },
+          axisY: {
+            value: state.transform.rotate.axes.axisY.value,
+            measurementUnit:
+              state.transform.rotate.axes.axisY.elementConfig.measurementUnit
+          },
+          axisZ: {
+            value: state.transform.rotate.axes.axisZ.value,
+            measurementUnit:
+              state.transform.rotate.axes.axisZ.elementConfig.measurementUnit
+          }
         },
         translate: {
-          axisX: state.transform.translate.axes.axisX.value,
-          axisY: state.transform.translate.axes.axisY.value,
-          axisZ: state.transform.translate.axes.axisZ.value
+          axisX: {
+            value: state.transform.translate.axes.axisX.value,
+            measurementUnit:
+              state.transform.translate.axes.axisX.elementConfig.measurementUnit
+          },
+          axisY: {
+            value: state.transform.translate.axes.axisY.value,
+            measurementUnit:
+              state.transform.translate.axes.axisY.elementConfig.measurementUnit
+          },
+          axisZ: {
+            value: state.transform.translate.axes.axisZ.value,
+            measurementUnit:
+              state.transform.translate.axes.axisZ.elementConfig.measurementUnit
+          }
         },
         scale: {
-          axisX: state.transform.scale.axes.axisX.value,
-          axisY: state.transform.scale.axes.axisY.value,
-          axisZ: state.transform.scale.axes.axisZ.value
+          axisX: {
+            value: state.transform.scale.axes.axisX.value,
+            measurementUnit:
+              state.transform.scale.axes.axisX.elementConfig.measurementUnit
+          },
+          axisY: {
+            value: state.transform.scale.axes.axisY.value,
+            measurementUnit:
+              state.transform.scale.axes.axisY.elementConfig.measurementUnit
+          },
+          axisZ: {
+            value: state.transform.scale.axes.axisZ.value,
+            measurementUnit:
+              state.transform.scale.axes.axisZ.elementConfig.measurementUnit
+          }
         },
         skew: {
-          axisX: state.transform.skew.axes.axisX.value,
-          axisY: state.transform.skew.axes.axisY.value,
-          axisZ: state.transform.skew.axes.axisZ.value
+          axisX: {
+            value: state.transform.skew.axes.axisX.value,
+            measurementUnit:
+              state.transform.skew.axes.axisX.elementConfig.measurementUnit
+          },
+          axisY: {
+            value: state.transform.skew.axes.axisY.value,
+            measurementUnit:
+              state.transform.skew.axes.axisY.elementConfig.measurementUnit
+          }
         },
-        perspective: state.transform.perspective.value
+        perspective: {
+          value: state.transform.perspective.value,
+          measurementUnit:
+            state.transform.perspective.elementConfig.measurementUnit
+        }
       }
     }
   };

@@ -7,10 +7,11 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 0,
+        value: 20,
         inputType: "range",
         elementConfig: {
-          label: "Translate X"
+          label: "Translate X",
+          measurementUnit: "px"
         },
         htmlProperties: {
           type: "range",
@@ -24,10 +25,11 @@ const initialState = {
         }
       },
       axisY: {
-        value: 0,
+        value: 25,
         inputType: "range",
         elementConfig: {
-          label: "Translate Y"
+          label: "Translate Y",
+          measurementUnit: "px"
         },
         htmlProperties: {
           type: "range",
@@ -41,10 +43,11 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 0,
+        value: 15,
         inputType: "range",
         elementConfig: {
-          label: "Translate Z"
+          label: "Translate Z",
+          measurementUnit: "px"
         },
         htmlProperties: {
           type: "range",
@@ -64,10 +67,11 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 0,
+        value: 5,
         inputType: "range",
         elementConfig: {
-          label: "Rotate X"
+          label: "Rotate X",
+          measurementUnit: "deg"
         },
         htmlProperties: {
           type: "range",
@@ -81,10 +85,11 @@ const initialState = {
         }
       },
       axisY: {
-        value: 0,
+        value: 6,
         inputType: "range",
         elementConfig: {
-          label: "Rotate Y"
+          label: "Rotate Y",
+          measurementUnit: "deg"
         },
         htmlProperties: {
           type: "range",
@@ -98,10 +103,11 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 0,
+        value: 7,
         inputType: "range",
         elementConfig: {
-          label: "Rotate Z"
+          label: "Rotate Z",
+          measurementUnit: "deg"
         },
         htmlProperties: {
           type: "range",
@@ -125,7 +131,8 @@ const initialState = {
         value: 20,
         inputType: "range",
         elementConfig: {
-          label: "Skew X"
+          label: "Skew X",
+          measurementUnit: "deg"
         },
         htmlProperties: {
           type: "range",
@@ -142,7 +149,8 @@ const initialState = {
         value: 20,
         inputType: "range",
         elementConfig: {
-          label: "Skew Y"
+          label: "Skew Y",
+          measurementUnit: "deg"
         },
         htmlProperties: {
           type: "range",
@@ -153,23 +161,6 @@ const initialState = {
         },
         dataSets: {
           "data-target": "axisY"
-        }
-      },
-      axisZ: {
-        value: 20,
-        inputType: "range",
-        elementConfig: {
-          label: "Skew Z"
-        },
-        htmlProperties: {
-          type: "range",
-          step: "1",
-          min: 0,
-          max: 20,
-          name: `skewZ-${uuid()}`
-        },
-        dataSets: {
-          "data-target": "axisZ"
         }
       }
     }
@@ -183,7 +174,8 @@ const initialState = {
         value: 0,
         inputType: "range",
         elementConfig: {
-          label: "Scale X"
+          label: "Scale X",
+          measurementUnit: ""
         },
         htmlProperties: {
           type: "range",
@@ -200,7 +192,8 @@ const initialState = {
         value: 0,
         inputType: "range",
         elementConfig: {
-          label: "Scale Y"
+          label: "Scale Y",
+          measurementUnit: ""
         },
         htmlProperties: {
           type: "range",
@@ -217,7 +210,8 @@ const initialState = {
         value: 0,
         inputType: "range",
         elementConfig: {
-          label: "Scale Z"
+          label: "Scale Z",
+          measurementUnit: ""
         },
         htmlProperties: {
           type: "range",
@@ -239,7 +233,8 @@ const initialState = {
     value: 0,
     inputType: "number",
     elementConfig: {
-      label: "Perspective"
+      label: "Perspective",
+      measurementUnit: "px"
     },
     htmlProperties: {
       type: "number",
