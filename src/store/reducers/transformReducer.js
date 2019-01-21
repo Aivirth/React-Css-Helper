@@ -7,7 +7,7 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate X",
@@ -16,8 +16,8 @@ const initialState = {
         htmlProperties: {
           type: "range",
           step: "1",
-          min: 0,
-          max: 360,
+          min: -500,
+          max: 500,
           name: `translateX-${uuid()}`
         },
         dataSets: {
@@ -25,7 +25,7 @@ const initialState = {
         }
       },
       axisY: {
-        value: 25,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate Y",
@@ -34,8 +34,8 @@ const initialState = {
         htmlProperties: {
           type: "range",
           step: "1",
-          min: 0,
-          max: 360,
+          min: -500,
+          max: 500,
           name: `translateY-${uuid()}`
         },
         dataSets: {
@@ -43,7 +43,7 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 15,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Translate Z",
@@ -52,8 +52,8 @@ const initialState = {
         htmlProperties: {
           type: "range",
           step: "1",
-          min: 0,
-          max: 360,
+          min: -500,
+          max: 500,
           name: `translateZ-${uuid()}`
         },
         dataSets: {
@@ -67,7 +67,7 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 5,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate X",
@@ -85,7 +85,7 @@ const initialState = {
         }
       },
       axisY: {
-        value: 6,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate Y",
@@ -103,7 +103,7 @@ const initialState = {
         }
       },
       axisZ: {
-        value: 7,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Rotate Z",
@@ -128,7 +128,7 @@ const initialState = {
     isActive: true,
     axes: {
       axisX: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Skew X",
@@ -137,8 +137,8 @@ const initialState = {
         htmlProperties: {
           type: "range",
           step: "1",
-          min: 0,
-          max: 20,
+          min: -360,
+          max: 360,
           name: `skewX-${uuid()}`
         },
         dataSets: {
@@ -146,7 +146,7 @@ const initialState = {
         }
       },
       axisY: {
-        value: 20,
+        value: 0,
         inputType: "range",
         elementConfig: {
           label: "Skew Y",
@@ -155,8 +155,8 @@ const initialState = {
         htmlProperties: {
           type: "range",
           step: "1",
-          min: 0,
-          max: 20,
+          min: -360,
+          max: 360,
           name: `skewY-${uuid()}`
         },
         dataSets: {
@@ -181,7 +181,7 @@ const initialState = {
           type: "range",
           step: "0.1",
           min: 0,
-          max: 10,
+          max: 3,
           name: `scaleX-${uuid()}`
         },
         dataSets: {
@@ -199,7 +199,7 @@ const initialState = {
           type: "range",
           step: "0.1",
           min: 0,
-          max: 10,
+          max: 3,
           name: `scaleY-${uuid()}`
         },
         dataSets: {
@@ -217,7 +217,7 @@ const initialState = {
           type: "range",
           step: "0.1",
           min: 0,
-          max: 10,
+          max: 3,
           name: `scaleZ-${uuid()}`
         },
         dataSets: {
@@ -239,8 +239,8 @@ const initialState = {
     htmlProperties: {
       type: "number",
       step: "1",
-      min: -999,
-      max: 999,
+      min: -99999,
+      max: 99999,
       name: `perspective-${uuid()}`
     },
     dataSets: {
