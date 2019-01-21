@@ -73,7 +73,7 @@ class Stage extends Component {
 
     computedTransformObj.perspective =
       perspective.value !== 0
-        ? `perspective(${skew.axisZ.value}${skew.axisZ.measurementUnit})`
+        ? `perspective(${perspective.value}${perspective.measurementUnit})`
         : null;
 
     const transformString = Object.values(computedTransformObj)
