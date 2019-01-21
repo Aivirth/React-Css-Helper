@@ -69,3 +69,6 @@ export const createTimeStamp = () => {
   // Return the formatted string
   return date.join("/") + " " + time.join(":") + " " + suffix;
 };
+
+export const isObjectEmpty = obj =>
+  Object.keys(obj).length === 0 && obj.constructor === Object;

@@ -7,6 +7,7 @@ import { restoreBase } from "../../../store/actions/baseActions";
 import { restoreBorder } from "../../../store/actions/borderActions";
 import { restoreBoxShadow } from "../../../store/actions/boxShadowActions";
 import { restoreBorderRadius } from "../../../store/actions/borderRadiusActions";
+import { restoreTransform } from "../../../store/actions/transformActions";
 
 class Restore extends Component {
   restoreController = snapStateProperties => {
@@ -14,7 +15,8 @@ class Restore extends Component {
       restoreBase,
       restoreBorder,
       restoreBorderRadius,
-      restoreBoxShadow
+      restoreBoxShadow,
+      restoreTransform
     } = this.props;
 
     Object.keys(snapStateProperties).forEach(property => {
@@ -30,6 +32,9 @@ class Restore extends Component {
           break;
         case "borderRadius":
           restoreBorderRadius(snapStateProperties[property]);
+          break;
+        case "transform":
+          restoreTransform(snapStateProperties[property]);
           break;
         default:
           return null;
@@ -61,6 +66,7 @@ export default connect(
     restoreBase,
     restoreBorder,
     restoreBorderRadius,
-    restoreBoxShadow
+    restoreBoxShadow,
+    restoreTransform
   }
 )(Restore);

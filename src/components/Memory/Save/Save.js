@@ -46,7 +46,8 @@ const mapStateToProps = state => {
       base: state.base,
       borders: state.borders,
       boxShadow: state.boxShadow,
-      borderRadius: state.borderRadius
+      borderRadius: state.borderRadius,
+      transform: state.transform
     }
   };
 };

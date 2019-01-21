@@ -4,6 +4,7 @@ import Range from "./Range/Range";
 import Checkbox from "./Checkbox/Checkbox";
 import Switch from "./Switch/Switch";
 import ColorPicker from "./ColorPicker/ColorPicker";
+import Number from "./Number/Number";
 
 export default function Input(props) {
   const {
@@ -22,6 +23,18 @@ export default function Input(props) {
     case "range":
       inputElement = (
         <Range
+          value={value}
+          htmlProperties={htmlProperties}
+          label={label}
+          dataSets={dataSets}
+          changed={changed}
+        />
+      );
+      break;
+
+    case "number":
+      inputElement = (
+        <Number
           value={value}
           htmlProperties={htmlProperties}
           label={label}
