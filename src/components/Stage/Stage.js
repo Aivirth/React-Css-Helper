@@ -9,10 +9,6 @@ class Stage extends Component {
     isRevealActive: false
   };
 
-  componentDidMount() {
-    console.log("Stage:", this.props);
-  }
-
   combineTransformProperty = transformObj => {
     const { rotate, translate, scale, perspective, skew } = transformObj;
     const computedTransformObj = {};

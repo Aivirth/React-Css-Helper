@@ -34,3 +34,10 @@ export const updtPerspective = payload => {
     payload: payload
   };
 };
+
+export const restoreTransform = payload => {
+  return {
+    type: actionTypes.RESTORE_TRANSFORM,
+    payload: payload
+  };
+};

@@ -266,6 +266,16 @@ const reducer = (state = initialState, action) => {
     case actionTypes.UPDT_PERSPECTIVE:
       return { ...state, perspective: action.payload };
 
+    case actionTypes.RESTORE_TRANSFORM:
+      return {
+        ...state,
+        translate: action.payload.translate,
+        rotate: action.payload.rotate,
+        skew: action.payload.skew,
+        scale: action.payload.scale,
+        perspective: action.payload.perspective
+      };
+
     default:
       return state;
   }

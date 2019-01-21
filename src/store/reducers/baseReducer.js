@@ -70,7 +70,6 @@ const reducer = (state = initialState, action) => {
       return { ...state, backgroundColor: action.payload };
 
     case actionTypes.RESTORE_BASE:
-      console.log("restore");
       return {
         ...state,
         width: action.payload.width,
