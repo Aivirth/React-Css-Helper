@@ -10,8 +10,37 @@ class Stage extends Component {
   };
 
   componentDidMount() {
-    // console.log(this.props);
+    console.log("Stage:", this.props);
   }
+
+  combineTransformProperty = transformObj => {
+    const { rotate, translate, scale, perspective, skew } = transformObj;
+
+    const computedTransformObj = {};
+
+    computedTransformObj.rotateX = rotate.axisX !== 0 ? rotate.axisX : null;
+    computedTransformObj.rotateY = rotate.axisY !== 0 ? rotate.axisY : null;
+    computedTransformObj.rotateZ = rotate.axisZ !== 0 ? rotate.axisZ : null;
+
+    computedTransformObj.skewX = skew.axisX !== 0 ? skew.axisX : null;
+    computedTransformObj.skewY = skew.axisY !== 0 ? skew.axisY : null;
+    computedTransformObj.skewZ = skew.axisZ !== 0 ? skew.axisZ : null;
+
+    computedTransformObj.translateX =
+      translate.axisX !== 0 ? translate.axisX : null;
+    computedTransformObj.translateY =
+      translate.axisY !== 0 ? translate.axisY : null;
+    computedTransformObj.translateZ =
+      translate.axisZ !== 0 ? translate.axisZ : null;
+
+    computedTransformObj.scaleX = scale.axisX !== 0 ? scale.axisX : null;
+    computedTransformObj.scaleY = scale.axisY !== 0 ? scale.axisY : null;
+    computedTransformObj.scaleZ = scale.axisZ !== 0 ? scale.axisZ : null;
+
+    computedTransformObj.perspective = perspective !== 0 ? perspective : null;
+
+    console.log(computedTransformObj);
+  };
 
   onTabOptionClickHandler = () => {
     this.setState({ isRevealActive: true });
@@ -20,7 +49,6 @@ class Stage extends Component {
   onRevealCloseButtonClickHandler = () => {
     this.setState({ isRevealActive: false });
   };
-  var;
 
   formatSpectatorDataFromStore = () => {
     const {
@@ -79,8 +107,11 @@ class Stage extends Component {
       base,
       borders,
       boxShadow,
-      borderRadius
+      borderRadius,
+      transform
     } = this.props.computedStylesFromState;
+
+    this.combineTransformProperty(transform);
 
     const boxShadowInset = boxShadow.inset ? "inset" : "";
 
@@ -103,7 +134,6 @@ class Stage extends Component {
         borders.left.color
       }`,
 
-      //TODO: color needs to be converted into rgba and combined with opacity
       boxShadow: `${boxShadow.offsetX}px ${boxShadow.offsetY}px ${
         boxShadow.blur
       }px ${boxShadow.spread}px ${rawHexToRgba(
@@ -232,6 +262,29 @@ const mapStateToProps = state => {
           radiusX: state.borderRadius.bottomRight.radiusX.value,
           radiusY: state.borderRadius.bottomRight.radiusY.value
         }
+      },
+      transform: {
+        rotate: {
+          axisX: state.transform.rotate.axes.axisX.value,
+          axisY: state.transform.rotate.axes.axisY.value,
+          axisZ: state.transform.rotate.axes.axisZ.value
+        },
+        translate: {
+          axisX: state.transform.translate.axes.axisX.value,
+          axisY: state.transform.translate.axes.axisY.value,
+          axisZ: state.transform.translate.axes.axisZ.value
+        },
+        scale: {
+          axisX: state.transform.scale.axes.axisX.value,
+          axisY: state.transform.scale.axes.axisY.value,
+          axisZ: state.transform.scale.axes.axisZ.value
+        },
+        skew: {
+          axisX: state.transform.skew.axes.axisX.value,
+          axisY: state.transform.skew.axes.axisY.value,
+          axisZ: state.transform.skew.axes.axisZ.value
+        },
+        perspective: state.transform.perspective.value
       }
     }
   };
