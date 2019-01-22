@@ -6,6 +6,17 @@
   display: flex;
   flex-wrap: wrap;
   text-align: left;
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__infos {
+    display: flex;
+    align-items: center;
+  }
   &__link {
     color: $malibu;
     transition: all 0.3s linear;
@@ -20,7 +31,7 @@
   }
   &__btn {
     text-decoration: none;
-    padding: 1rem;
+    padding: 1rem 1.4rem;
     background: #181819;
     color: $azure;
     transition: all 0.3s linear;
