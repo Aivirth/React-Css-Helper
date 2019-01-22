@@ -139,7 +139,7 @@ class Stage extends Component {
       borderRadius.bottomRight.radiusY
     }px;
 
-    transform : ${transformString.length > 0 ? `${transformString}` : "none"}
+    transform : ${transformString.length > 0 ? `${transformString}` : "none"};
     `;
   };
 
