@@ -10,6 +10,7 @@ import {
 // import Navbar from "./components/Navbar/Navbar";
 import Topnav from "./containers/Topnav/Topnav";
 import Main from "./containers/Layout/Main/Main";
+import Footer from "./containers/Layout/Footer/Footer";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <div className="App container d-flex">
           <Topnav />
           <Main />
+          <Footer />
         </div>
       </Router>
     );

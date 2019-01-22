@@ -1,0 +1,41 @@
+.Footer {
+  background: $blue-charcoal;
+  color: $azure;
+  padding: 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  &__link {
+    color: $malibu;
+    transition: all 0.3s linear;
+    &:hover {
+      color: $blue-2;
+    }
+
+    &:focus,
+    &:active {
+      color: $blue-1;
+    }
+  }
+  &__btn {
+    text-decoration: none;
+    padding: 1rem;
+    background: #181819;
+    color: $azure;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background: #68b0f0;
+    }
+
+    &:active,
+    &:focus {
+      background: $blue-2;
+    }
+  }
+
+  &__block {
+    flex: 0 0 50%;
+  }
+}

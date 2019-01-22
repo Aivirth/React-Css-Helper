@@ -3,7 +3,7 @@ import { NavLink as Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 class Sidenav extends Component {
   state = {
     navLinks: [
