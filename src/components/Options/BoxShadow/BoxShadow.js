@@ -11,16 +11,8 @@ import {
   updtBoxShadowInset
 } from "../../../store/actions/boxShadowActions";
 
-import { convertStringToBoolean } from "../../../helpers/helpers";
-
 class BoxShadow extends Component {
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
-
   inputChangeHandler = (e, identifier) => {
-    // console.log(e.target.value);
-
     const {
       updtBoxShadowOffsetY,
       updtBoxShadowOffsetX,

@@ -13,8 +13,10 @@
 @import "./layout/Main";
 @import "./layout/Stage";
 @import "./layout/Inputs";
+@import "./layout/Footer";
 
 // Components
+@import "./components/App";
 @import "./components/Navbar";
 @import "./components/Sidenav";
 @import "./components/Topnav";
