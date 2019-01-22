@@ -24,7 +24,6 @@ class Base extends Component {
     } else {
       propertyCopy.value = e.target.value;
     }
-    // storeCopy[identifier] = propertyCopy;
 
     switch (identifier) {
       case "width":
@@ -43,10 +42,6 @@ class Base extends Component {
         return null;
     }
   };
-
-  componentDidMount() {
-    console.log("Base:", this.props);
-  }
 
   render() {
     const { stylesFromState } = this.props;

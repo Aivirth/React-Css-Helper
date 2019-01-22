@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Checkbox(props) {
-  const { changed, identifier, value, htmlProperties, label, dataSets } = props;
+  const { changed, value, htmlProperties, label, dataSets } = props;
 
   return (
     <React.Fragment>
