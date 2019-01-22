@@ -2,8 +2,9 @@
   background-color: $bright-gray;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 6.5rem);
-  flex: 0 0 $sidenav-width;
+  // min-height: calc(100vh - 6.5rem);
+  // flex: 0 0 $sidenav-width;
+  width: $sidenav-width;
   position: relative;
 
   transition: transform 0.3s ease;

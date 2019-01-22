@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.scss";
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  withRouter
+  BrowserRouter as Router
+  // Route,
+  // Switch,
+  // withRouter
 } from "react-router-dom";
 
 // import Navbar from "./components/Navbar/Navbar";
@@ -15,14 +15,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          {/* <Switch>
-            <Route exact path="/" component={Navbar} />
-          </Switch> */}
-          <div className="container d-flex">
-            <Topnav />
-            <Main />
-          </div>
+        <div className="App container d-flex">
+          <Topnav />
+          <Main />
         </div>
       </Router>
     );
